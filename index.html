@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+    <title>Passky</title>
+    <link rel="shortcut icon" type="image/png" href="images/logo.png"/>
+    <link rel="stylesheet" href="css/tailwind.min.css">
+    <link id="css-theme" type="text/css" rel="stylesheet" href="css/themes/dark.css">
+		<style>
+			html{
+				scroll-behavior: smooth;
+			}
+		</style>
+  </head>
+  <body>
+    <div class="relative overflow-hidden">
+      <header class="relative">
+        <div class="bg-gray-800 pt-6">
+          <nav class="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6" aria-label="Global">
+            <div class="flex items-center flex-1">
+              <div class="flex items-center justify-between w-full md:w-auto">
+                <a href="#">
+                  <span class="sr-only">Passky</span>
+                  <img class="h-8 w-auto sm:h-10" src="images/logo.png" alt="Passky">
+                </a>
+                <div class="-mr-2 flex items-center md:hidden">
+                  <button type="button" class="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="hidden space-x-8 md:flex md:ml-10">
+                <a href="#product" class="text-base font-medium text-white hover:text-gray-300">Product</a>
+                <a href="#features" class="text-base font-medium text-white hover:text-gray-300">Features</a>
+                <a href="#pricing" class="text-base font-medium text-white hover:text-gray-300">Pricing</a>
+                <a href="#faq" class="text-base font-medium text-white hover:text-gray-300">FAQ</a>
+              </div>
+            </div>
+            <div class="hidden md:flex md:items-center md:space-x-6">
+              <a target="_blank" href="https://passky.org" class="text-base font-medium text-white hover:text-gray-300">
+                Log in
+              </a>
+              <a target="_blank" href="https://passky.org/register" class="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
+                Sign up
+              </a>
+            </div>
+          </nav>
+        </div>
+        <!--
+Mobile menu, show/hide based on menu open state.
+Entering: "duration-150 ease-out"
+From: "opacity-0 scale-95"
+To: "opacity-100 scale-100"
+Leaving: "duration-100 ease-in"
+From: "opacity-100 scale-100"
+To: "opacity-0 scale-95"
+-->
+        <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
+          <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="px-5 pt-4 flex items-center justify-between">
+              <div>
+                <img class="h-8 w-auto" src="images/logo.png" alt="Passky">
+              </div>
+              <div class="-mr-2">
+                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-600">
+                  <span class="sr-only">Close menu</span>
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="pt-5 pb-6">
+              <div class="px-2 space-y-1">
+                <a href="product" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Product</a>
+                <a href="features" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Features</a>
+                <a href="pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Pricing</a>
+                <a href="faq" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">FAQ</a>
+              </div>
+              <div class="mt-6 px-5">
+                <a href="#" class="block text-center w-full py-3 px-4 rounded-md shadow bg-indigo-600 text-white font-medium hover:bg-indigo-700">Sign up</a>
+              </div>
+              <div class="mt-6 px-5">
+                <p class="text-center text-base font-medium text-gray-500">Existing customer? 
+                  <a href="#" class="text-gray-900 hover:underline">Login</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <section id="product">
+          <div class="pt-10 bg-gray-800 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+            <div class="mx-auto max-w-7xl lg:px-8">
+              <div class="lg:grid lg:grid-cols-2 lg:gap-8">
+                <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                  <div class="lg:py-24">
+                    <a target="_blank" href="https://github.com/Rabbit-Company" class="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">
+                      <span class="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-indigo-500 rounded-full">We're open source</span>
+                      <span class="ml-4 text-sm">Visit our Github page</span>
+                      <svg class="ml-2 w-5 h-5 text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                      </svg>
+                    </a>
+                    <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                      <span class="block">The most unbloated</span>
+                      <span class="block text-indigo-400">password manager</span>
+                    </h1>
+                    <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
+                      Passky is simple, modern, lightweight, open source and secure password manager.
+                    </p>
+                  </div>
+                </div>
+                <div class="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
+                  <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
+                    <img class="rounded-lg w-full lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="images/passky-design.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="features">
+          <div class="relative bg-gray-900 pt-16 pb-32 overflow-hidden">
+            <div class="relative">
+              <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+                <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
+                  <div>
+                    <div>
+                      <span class="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
+												<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+													<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+													<path d="M3 21v-4a4 4 0 1 1 4 4h-4" />
+													<path d="M21 3a16 16 0 0 0 -12.8 10.2" />
+													<path d="M21 3a16 16 0 0 1 -10.2 12.8" />
+													<path d="M10.6 9a9 9 0 0 1 4.4 4.4" />
+												</svg>
+											</span>
+                    </div>
+                    <div class="mt-6">
+                      <h2 class="text-3xl font-extrabold tracking-tight text-white">Multiple themes</h2>
+                      <p class="mt-4 text-lg text-gray-500">
+												Passky has already integrated 5 themes and this is just the beginning. The number of themes would dramatically increase with more users as it only takes around 5 minutes to create a new theme and does not require any programming skills. 
+											</p>
+                      <div class="mt-6">
+                        <a target="_blank" href="https://rabbitstore.org/?app=com.rabbit-company.passky" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">Get started</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-12 sm:mt-16 lg:mt-0">
+                  <div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                    <img class="w-full rounded-xl ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" src="images/passky-themes.png" alt="Passky themes">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mt-24">
+              <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+                <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-32 lg:max-w-none lg:mx-0 lg:px-0 lg:col-start-2">
+                  <div>
+                    <div>
+                      <span class="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
+												<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+														<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+														<circle cx="12" cy="12" r="9" />
+														<line x1="3.6" y1="9" x2="20.4" y2="9" />
+														<line x1="3.6" y1="15" x2="20.4" y2="15" />
+														<path d="M11.5 3a17 17 0 0 0 0 18" />
+														<path d="M12.5 3a17 17 0 0 1 0 18" />
+												</svg>
+                      </span>
+                    </div>
+                    <div class="mt-6">
+                      <h2 class="text-3xl font-extrabold tracking-tight text-white">
+                        Multiple languages
+                      </h2>
+                      <p class="mt-4 text-lg text-gray-500">
+												With help from our users, Passky now supports 17 languages! If your language is missing and you want to contribute to this project, you can easily translate it on <a target="_blank" href="https://crowdin.com/project/passky" class="text-blue-600">Crowdin</a>.
+											</p>
+                      <div class="mt-6">
+                        <a target="_blank" href="https://rabbitstore.org/?app=com.rabbit-company.passky" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">Get started</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
+                  <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                    <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none" src="images/passky-languages.png" alt="Passky languages">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="pricing">
+          <div class="bg-gray-800">
+            <div class="pt-12 px-4 sm:px-6 lg:px-8 lg:pt-20">
+              <div class="text-center">
+                <h2 class="text-lg leading-6 font-semibold text-gray-300 uppercase tracking-wider">
+                  Pricing
+                </h2>
+                <p class="mt-2 text-3xl font-extrabold text-white sm:text-4xl lg:text-5xl">
+                  The right price for you, whoever you are
+                </p>
+                <p class="mt-3 max-w-4xl mx-auto text-xl text-gray-300 sm:mt-5 sm:text-2xl">
+                  Using Passky doesn’t require an upfront cost or monthly subscription. It’s completely free to download and can be hosted by anyone who has the space to do so.
+                </p>
+              </div>
+            </div>
+            <div class="bg-gray-800 mt-16 bg-white pb-12 lg:mt-20 lg:pb-20">
+              <div class="relative z-0">
+                <div class="absolute inset-0 h-5/6 bg-gray-800 lg:h-2/3">
+                </div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                  <div class="relative lg:grid lg:grid-cols-7">
+                    <div class="mx-auto max-w-md lg:mx-0 lg:max-w-none lg:col-start-1 lg:col-end-3 lg:row-start-2 lg:row-end-3">
+                      <div class="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-l-lg">
+                        <div class="flex-1 flex flex-col">
+                          <div class="bg-white px-6 py-10">
+                            <div>
+                              <h3 class="text-center text-2xl font-medium text-gray-900" id="tier-hobby">Business</h3>
+                              <div class="mt-4 flex items-center justify-center">
+                                <span class="px-3 flex items-start text-6xl tracking-tight text-gray-900">
+                                  <span class="mt-2 mr-2 text-4xl font-medium">$</span>
+                                  <span class="font-extrabold">0</span>
+                                </span>
+                                <span class="text-xl font-medium text-gray-500">/month</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
+                            <ul role="list" class="space-y-4">
+                              <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <p class="ml-3 text-base font-medium text-gray-500">Everything in Personal</p>
+                              </li>
+                              <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <p class="ml-3 text-base font-medium text-gray-500">Passky Core Features</p>
+                              </li>
+                              <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <p class="ml-3 text-base font-medium text-gray-500">Self-host Option</p>
+                              </li>
+                            </ul>
+                            <div class="mt-8">
+                              <div class="rounded-lg shadow-md">
+                                <a target="_blank" href="https://rabbitstore.org/?app=com.rabbit-company.passky" class="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50" aria-describedby="tier-hobby">
+                                  Download
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-10 max-w-lg mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-start-3 lg:col-end-6 lg:row-start-1 lg:row-end-4">
+                      <div class="relative z-10 rounded-lg shadow-xl">
+                        <div class="pointer-events-none absolute inset-0 rounded-lg border-2 border-indigo-600" aria-hidden="true">
+                        </div>
+                        <div class="absolute inset-x-0 top-0 transform translate-y-px">
+                          <div class="flex justify-center transform -translate-y-1/2">
+                            <span class="inline-flex rounded-full bg-indigo-600 px-4 py-1 text-sm font-semibold tracking-wider uppercase text-white">Most popular</span>
+                          </div>
+                        </div>
+                        <div class="bg-white rounded-t-lg px-6 pt-12 pb-10">
+                          <div>
+                            <h3 class="text-center text-3xl font-semibold text-gray-900 sm:-mx-6" id="tier-growth">Personal</h3>
+                            <div class="mt-4 flex items-center justify-center">
+                              <span class="px-3 flex items-start text-6xl tracking-tight text-gray-900 sm:text-6xl">
+                                <span class="mt-2 mr-2 text-4xl font-medium">$</span>
+                                <span class="font-extrabold">0</span>
+                              </span>
+                              <span class="text-2xl font-medium text-gray-500">/month</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="border-t-2 border-gray-100 rounded-b-lg pt-10 pb-8 px-6 bg-gray-50 sm:px-10 sm:py-10">
+                          <ul role="list" class="space-y-4">
+														<li class="flex items-start">
+															<div class="flex-shrink-0">
+																<svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+															</div>
+															<p class="ml-3 text-base font-medium text-gray-500">Passky Core Features</p>
+														</li>
+														<li class="flex items-start">
+															<div class="flex-shrink-0">
+																<svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+															</div>
+															<p class="ml-3 text-base font-medium text-gray-500">Access to public Passky Servers</p>
+														</li>
+														<li class="flex items-start">
+															<div class="flex-shrink-0">
+																<svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+															</div>
+															<p class="ml-3 text-base font-medium text-gray-500">Software 2FA (Aegis)</p>
+														</li>
+														<li class="flex items-start">
+															<div class="flex-shrink-0">
+																<svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+															</div>
+															<p class="ml-3 text-base font-medium text-gray-500">Hardware 2FA (Yubikey)</p>
+														</li>
+														<li class="flex items-start">
+															<div class="flex-shrink-0">
+																<svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+															</div>
+															<p class="ml-3 text-base font-medium text-gray-500">Self-host Option</p>
+														</li>
+                          </ul>
+                          <div class="mt-10">
+                            <div class="rounded-lg shadow-md">
+                              <a target="_blank" href="https://rabbitstore.org/?app=com.rabbit-company.passky" class="block w-full text-center rounded-lg border border-transparent bg-indigo-600 px-6 py-4 text-xl leading-6 font-medium text-white hover:bg-indigo-700" aria-describedby="tier-growth">
+                                Download
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mt-10 mx-auto max-w-md lg:m-0 lg:max-w-none lg:col-start-6 lg:col-end-8 lg:row-start-2 lg:row-end-3">
+                      <div class="h-full flex flex-col rounded-lg shadow-lg overflow-hidden lg:rounded-none lg:rounded-r-lg">
+                        <div class="flex-1 flex flex-col">
+                          <div class="bg-white px-6 py-10">
+                            <div>
+                              <h3 class="text-center text-2xl font-medium text-gray-900" id="tier-scale">Enterprise</h3>
+                              <div class="mt-4 flex items-center justify-center">
+                                <span class="px-3 flex items-start text-6xl tracking-tight text-gray-900">
+                                  <span class="mt-2 mr-2 text-4xl font-medium">$</span>
+                                  <span class="font-extrabold">0</span>
+                                </span>
+                                <span class="text-xl font-medium text-gray-500">/month</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="flex-1 flex flex-col justify-between border-t-2 border-gray-100 p-6 bg-gray-50 sm:p-10 lg:p-6 xl:p-10">
+                            <ul role="list" class="space-y-4">
+															<li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <p class="ml-3 text-base font-medium text-gray-500">Everything in Personal</p>
+                              </li>
+                              <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <p class="ml-3 text-base font-medium text-gray-500">Passky Core Features</p>
+                              </li>
+                              <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                  <svg class="flex-shrink-0 h-6 w-6 text-green-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+                                </div>
+                                <p class="ml-3 text-base font-medium text-gray-500">Self-host Option</p>
+                              </li>
+                            </ul>
+                            <div class="mt-8">
+                              <div class="rounded-lg shadow-md">
+                                <a target="_blank" href="https://rabbitstore.org/?app=com.rabbit-company.passky" class="block w-full text-center rounded-lg border border-transparent bg-white px-6 py-3 text-base font-medium text-indigo-600 hover:bg-gray-50" aria-describedby="tier-scale">
+                                  Download
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="faq">
+					<div class="bg-gray-900">
+						<div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+							<div class="max-w-3xl mx-auto divide-y-2 divide-gray-700">
+								<h2 class="text-center text-3xl font-extrabold text-white sm:text-4xl">
+									Frequently asked questions
+								</h2>
+								<dl id='faq-div' class="mt-6 space-y-6 divide-y divide-gray-700"></dl>
+							</div>
+						</div>
+					</div>
+				</section>
+      </main>
+    </div>
+		<script src="js/index.js"></script>
+  </body>
+</html>
