@@ -23,3 +23,11 @@ for(let i = 0; i < Object.keys(questions).length; i++){
         }
     });
 }
+
+document.getElementById("mobile-menu-open-btn").addEventListener("click", () => {
+    document.getElementById("mobile-menu").className = "absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden";
+});
+
+document.getElementById("mobile-menu-close-btn").addEventListener("click", () => {
+    document.getElementById("mobile-menu").className = "hidden absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden";
+});
