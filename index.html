@@ -47,15 +47,6 @@
             </div>
           </nav>
         </div>
-        <!--
-Mobile menu, show/hide based on menu open state.
-Entering: "duration-150 ease-out"
-From: "opacity-0 scale-95"
-To: "opacity-100 scale-100"
-Leaving: "duration-100 ease-in"
-From: "opacity-100 scale-100"
-To: "opacity-0 scale-95"
--->
         <div id="mobile-menu" class="hidden absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
           <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
             <div class="px-5 pt-4 flex items-center justify-between">
@@ -130,7 +121,7 @@ To: "opacity-0 scale-95"
                   <div>
                     <div>
                       <span class="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
-												<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+												<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 													<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
 													<path d="M3 21v-4a4 4 0 1 1 4 4h-4" />
 													<path d="M21 3a16 16 0 0 0 -12.8 10.2" />
@@ -163,7 +154,7 @@ To: "opacity-0 scale-95"
                   <div>
                     <div>
                       <span class="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
-												<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+												<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 														<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
 														<circle cx="12" cy="12" r="9" />
 														<line x1="3.6" y1="9" x2="20.4" y2="9" />
@@ -189,6 +180,43 @@ To: "opacity-0 scale-95"
                 <div class="mt-12 sm:mt-16 lg:mt-0 lg:col-start-1">
                   <div class="pr-4 -ml-48 sm:pr-6 md:-ml-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
                     <img class="w-full rounded-xl shadow-xl ring-1 ring-black ring-opacity-5 lg:absolute lg:right-0 lg:h-full lg:w-auto lg:max-w-none" src="images/passky-languages.png" alt="Passky languages">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative mt-24">
+              <div class="lg:mx-auto lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:grid-flow-col-dense lg:gap-24">
+                <div class="px-4 max-w-xl mx-auto sm:px-6 lg:py-16 lg:max-w-none lg:mx-0 lg:px-0">
+                  <div>
+                    <div>
+                      <span class="h-12 w-12 rounded-md flex items-center justify-center bg-indigo-600">
+												<svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                          <circle cx="12" cy="12" r="9" />
+                          <line x1="9" y1="10" x2="9.01" y2="10" />
+                          <line x1="15" y1="10" x2="15.01" y2="10" />
+                          <path d="M9.5 15a3.5 3.5 0 0 0 5 0" />
+                          <path d="M12 3a2 2 0 0 0 0 4" />
+												</svg>
+											</span>
+                    </div>
+                    <div class="mt-6">
+                      <h2 class="text-3xl font-extrabold tracking-tight text-white">Ease of use</h2>
+                      <p class="mt-4 text-lg text-gray-500">
+												Our main goal for Passky is to be the easiest password manager to use. On Passky's main page you can see all your saved passwords, can search for specific ones, edit them and copy information with just one click.
+											</p>
+                      <div class="mt-6">
+                        <a target="_blank" href="https://rabbitstore.org/?app=com.rabbit-company.passky" class="inline-flex px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700">Get started</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-12 sm:mt-16 lg:mt-0">
+                  <div class="pl-4 -mr-48 sm:pl-6 md:-mr-16 lg:px-0 lg:m-0 lg:relative lg:h-full">
+                    <video class="w-full rounded-xl ring-opacity-5 lg:absolute lg:left-0 lg:h-full lg:w-auto lg:max-w-none" autoplay loop muted>
+                      <source src="images/passky-addPassword.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </div>
               </div>
