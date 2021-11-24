@@ -12,7 +12,7 @@ const servers = {
 
 let srvHtml = "";
 for(let i = 0; i < Object.keys(servers).length; i++){
-    srvHtml += "<tr><td class='px-6 py-4 whitespace-nowrap'><div class='flex items-center'><div class='flex-shrink-0 h-10 w-10'><img class='h-10 w-10 rounded-full' src='images/flags/" + Object.values(servers)[i]["location"] + ".png' alt='" + Object.values(servers)[i]["location"] + " flag'></div><div class='ml-4'><div class='text-sm font-medium text-gray-300'>" + Object.keys(servers)[i] + "</div><div class='text-sm text-gray-400'>" + Object.values(servers)[i]["domain"] + "</div></div></div></td><td id='srv-accounts-" + i + "' class='px-6 py-4 whitespace-nowrap text-sm text-gray-400'>0/0</td><td id='srv-version-" + i + "' class='px-6 py-4 whitespace-nowrap text-sm text-gray-400'>/</td><td class='px-6 py-4 whitespace-nowrap'><span id='srv-status-" + i + "' class='px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-800 text-red-300'>Offline</span></td></tr>";
+    srvHtml += "<tr><td class='px-6 py-4 whitespace-nowrap'><div class='flex items-center'><div class='flex-shrink-0 h-10 w-10'><img class='h-10 w-10 rounded-full' src='images/flags/" + Object.values(servers)[i]["location"] + ".png' alt='" + Object.values(servers)[i]["location"] + " flag'></div><div class='ml-4'><div class='text-sm font-medium text-gray-300'>" + Object.keys(servers)[i] + "</div><div class='text-sm text-gray-400'>" + Object.values(servers)[i]["domain"] + "</div></div></div></td><td id='srv-accounts-" + i + "' class='px-6 py-4 whitespace-nowrap text-sm text-gray-400'>0/0</td><td id='srv-version-" + i + "' class='px-6 py-4 whitespace-nowrap text-sm text-gray-400'>/</td><td class='px-6 py-4 whitespace-nowrap'><span id='srv-status-" + i + "' class='px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-red-800 text-red-300'>Offline</span></td></tr>";
 }
 
 document.getElementById("public-servers-table").innerHTML = srvHtml;
@@ -84,7 +84,7 @@ for(let i = 0; i < Object.values(servers).length; i++){
     document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
     document.getElementById("srv-version-" + i).innerText = json.version;
     document.getElementById("srv-status-" + i).innerText = "Online";
-    document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-800 text-green-500";
+    document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
 }
 
 function fetchServerInfo(i){
@@ -99,6 +99,6 @@ function fetchServerInfo(i){
         document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
         document.getElementById("srv-version-" + i).innerText = json.version;
         document.getElementById("srv-status-" + i).innerText = "Online";
-        document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-800 text-green-500";
+        document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
     }).catch();
 }
