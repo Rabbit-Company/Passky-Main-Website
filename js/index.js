@@ -19,11 +19,15 @@ function copyToClipboard(text){
 const servers = {
     "Europe 1": {
         "domain": "https://eu1.passky.org",
-        "location": "de"
+        "location": "eu"
     },
     "Europe 2": {
         "domain": "https://eu2.passky.org",
-        "location": "de"
+        "location": "eu"
+    },
+    "United States 1": {
+        "domain": "https://us1.passky.org",
+        "location": "us"
     }
 }
 
