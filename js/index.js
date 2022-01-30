@@ -28,6 +28,10 @@ const servers = {
     "United States 1": {
         "domain": "https://us1.passky.org",
         "location": "us"
+    },
+    "United States 2": {
+        "domain": "https://us2.passky.org",
+        "location": "us"
     }
 }
 
