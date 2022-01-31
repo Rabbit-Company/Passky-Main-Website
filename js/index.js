@@ -196,7 +196,7 @@ function changeLatencyColors(latencies){
     let avg = average(latencies);
     for(let i = 0; i < latencies.length; i++){
         let latency = localStorage.getItem("latency-" + i);
-        if(Number(latency) > average(latencies)){
+        if(Number(latency) > avg){
             document.getElementById("srv-latency-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-red-800 text-red-300";
         }else{
             document.getElementById("srv-latency-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
