@@ -152,7 +152,6 @@ for(let i = 0; i < Object.values(servers).length; i++){
     document.getElementById("srv-status-" + i).innerText = "Online";
     document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
     if(i == Object.values(servers).length-1){
-        console.log("Ran at index ." + i);
         changeLatencyColors(latencies);
     }
 }
@@ -188,7 +187,6 @@ function fetchServerInfo(i){
         document.getElementById("srv-status-" + i).innerText = "Online";
         document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
         if(i == Object.values(servers).length-1){
-            console.log("Ran at index " + i);
             changeLatencyColors(latencies);
         }
     }).catch();
