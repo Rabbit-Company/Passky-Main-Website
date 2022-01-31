@@ -37,7 +37,7 @@ const servers = {
 
 let srvHtml = "";
 for(let i = 0; i < Object.keys(servers).length; i++){
-    srvHtml += "<tr><td class='px-6 py-4 whitespace-nowrap'><div class='flex items-center'><div class='flex-shrink-0 h-10 w-10'><img class='h-10 w-10 rounded-full' src='images/flags/" + Object.values(servers)[i]["location"] + ".png' alt='" + Object.values(servers)[i]["location"] + " flag'></div><div class='ml-4'><div class='text-sm font-medium text-gray-300'>" + Object.keys(servers)[i] + "</div><div class='text-sm text-gray-400'>" + Object.values(servers)[i]["domain"] + "</div></div></div></td><td id='srv-accounts-" + i + "' class='px-6 py-4 whitespace-nowrap text-sm text-gray-400'>0/0</td><td id='srv-version-" + i + "' class='px-6 py-4 whitespace-nowrap text-sm text-gray-400'>/</td><td class='px-6 py-4 whitespace-nowrap'><span id='srv-latency-" + i + "' class='px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-red-800 text-red-300'>0 ms</span></td><td class='px-6 py-4 whitespace-nowrap'><span id='srv-status-" + i + "' class='px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-red-800 text-red-300'>Offline</span></td></tr>";
+    srvHtml += "<tr><td class='px-6 py-4 whitespace-nowrap'><div class='flex items-center'><div class='flex-shrink-0 h-10 w-10'><img class='h-10 w-10 rounded-full' src='images/flags/" + Object.values(servers)[i]["location"] + ".png' alt='" + Object.values(servers)[i]["location"] + " flag'></div><div class='ml-4'><div class='text-sm font-medium text-gray-300'>" + Object.keys(servers)[i] + "</div><div class='text-sm text-gray-400'>" + Object.values(servers)[i]["domain"] + "</div></div></div></td><td id='srv-accounts-" + i + "' class='px-6 py-4 whitespace-nowrap text-sm text-gray-400'>0/0</td><td id='srv-version-" + i + "' class='px-6 py-4 whitespace-nowrap text-sm text-gray-400'>/</td><td class='px-6 py-4 whitespace-nowrap'><span id='srv-latency-" + i + "' class='px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500'>0 ms</span></td><td class='px-6 py-4 whitespace-nowrap'><span id='srv-status-" + i + "' class='px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-red-800 text-red-300'>Offline</span></td></tr>";
 }
 
 document.getElementById("public-servers-table").innerHTML = srvHtml;
@@ -106,6 +106,8 @@ document.getElementById("zec-qr").addEventListener("click", () => {
     alert('Zcash address copied to your clipboard!');
 });
 
+let latencies = [];
+
 //Public Server Info
 for(let i = 0; i < Object.values(servers).length; i++){
     let jsonData = localStorage.getItem("data-" + i);
@@ -143,18 +145,24 @@ for(let i = 0; i < Object.values(servers).length; i++){
     }
 
     let json = JSON.parse(jsonData);
+    latencies.push(Number(latency));
     document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
     document.getElementById("srv-version-" + i).innerText = json.version;
     document.getElementById("srv-latency-" + i).innerText = Number(latency) + " ms";
-    if(Number(latency) > 200){
-        document.getElementById("srv-latency-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-red-800 text-red-300";
-    }else if(Number(latency) > 100){
-        document.getElementById("srv-latency-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-yellow-800 text-red-200";
-    }else{
-        document.getElementById("srv-latency-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
-    }
     document.getElementById("srv-status-" + i).innerText = "Online";
     document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
+    if(i == Object.values(servers).length-1){
+        console.log("Ran at index ." + i);
+        changeLatencyColors(latencies);
+    }
+}
+
+function average(numbers) {
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++){
+        sum += numbers[i];
+    }
+    return (sum / numbers.length) || 0;
 }
 
 function fetchServerInfo(i){
@@ -164,6 +172,7 @@ function fetchServerInfo(i){
     .then(response => {
         if (response.ok){
             latency = new Date() - latencyStart;
+            latencies.push(latency);
             return response.json();
         }
         localStorage.setItem("data-" + i, "{}");
@@ -176,14 +185,23 @@ function fetchServerInfo(i){
         document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
         document.getElementById("srv-version-" + i).innerText = json.version;
         document.getElementById("srv-latency-" + i).innerText = latency + " ms";
-        if(Number(latency) > 200){
+        document.getElementById("srv-status-" + i).innerText = "Online";
+        document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
+        if(i == Object.values(servers).length-1){
+            console.log("Ran at index " + i);
+            changeLatencyColors(latencies);
+        }
+    }).catch();
+}
+
+function changeLatencyColors(latencies){
+    let avg = average(latencies);
+    for(let i = 0; i < latencies.length; i++){
+        let latency = localStorage.getItem("latency-" + i);
+        if(Number(latency) > average(latencies)){
             document.getElementById("srv-latency-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-red-800 text-red-300";
-        }else if(Number(latency) > 100){
-            document.getElementById("srv-latency-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-yellow-800 text-red-200";
         }else{
             document.getElementById("srv-latency-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
         }
-        document.getElementById("srv-status-" + i).innerText = "Online";
-        document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
-    }).catch();
+    }
 }
