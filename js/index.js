@@ -151,9 +151,7 @@ for(let i = 0; i < Object.values(servers).length; i++){
     document.getElementById("srv-latency-" + i).innerText = Number(latency) + " ms";
     document.getElementById("srv-status-" + i).innerText = "Online";
     document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
-    if(i == Object.values(servers).length-1){
-        changeLatencyColors(latencies);
-    }
+    changeLatencyColors(latencies);
 }
 
 function average(numbers) {
@@ -186,9 +184,7 @@ function fetchServerInfo(i){
         document.getElementById("srv-latency-" + i).innerText = latency + " ms";
         document.getElementById("srv-status-" + i).innerText = "Online";
         document.getElementById("srv-status-" + i).className = "px-2 inline-flex text-xs leading-5 font-semibold rounded-md bg-green-800 text-green-500";
-        if(i == Object.values(servers).length-1){
-            changeLatencyColors(latencies);
-        }
+        changeLatencyColors(latencies);
     }).catch();
 }
 
