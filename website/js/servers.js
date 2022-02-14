@@ -24,6 +24,13 @@ for(let i = 0; i < Object.keys(servers).length; i++){
 
 document.getElementById("public-servers-table").innerHTML = srvHtml;
 
+document.getElementById("stats-cpu-bar").style = "width: 0%";
+document.getElementById("stats-ram-bar").style = "width: 0%";
+document.getElementById("stats-storage-bar").style = "width: 0%";
+document.getElementById("stats-accounts-bar").style = "width: 0%";
+document.getElementById("stats-passwords-bar").style = "width: 0%";
+document.getElementById("stats-version-bar").style = "width: 0%";
+
 let latencies = [];
 
 for(let i = 0; i < Object.values(servers).length; i++){
