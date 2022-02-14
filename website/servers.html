@@ -115,9 +115,186 @@
         </div>
       </div>
     </section>
+		<section id="stats">
+      <div class="bg-gray-800">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+        <h2 class="text-center mb-6 text-3xl font-extrabold text-white sm:text-4xl">
+          Server Stats
+        </h2>
+        <div class="max-w-3xl mx-auto">
+          <div class="flex flex-col">
+            <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+              <div class="py-2 align-middle inline-block min-w-full">
+                <div class="shadow overflow-hidden border-b border-gray-800 sm:rounded-lg">
+									<div>
+										<div class="mt-1 flex rounded-md shadow-sm">
+											<div class="relative flex items-stretch flex-grow focus-within:z-10">
+												<div class="mt-1 flex rounded-md shadow-sm">
+													<span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-700 bg-gray-800 text-gray-400 sm:text-sm"> https:// </span>
+													<input type="text" name="server" id="server" class="flex-1 min-w-0 block w-full px-3 py-2 rounded-none sm:text-sm border border-r-0 border-gray-700 bg-gray-800 text-gray-400 focus:outline-none" spellcheck="false" autocomplete="off" placeholder="domain.com">
+													<button id="server-stats-btn" type="button" class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-700 text-sm font-medium rounded-r-md text-gray-400 bg-gray-800 hover:bg-gray-600 focus:outline-none">
+														<svg class="h-5 w-5 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" fill="none" aria-hidden="true" stroke-linecap="round" stroke-linejoin="round">
+															<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+															<circle cx="10" cy="10" r="7" />
+															<line x1="21" y1="21" x2="15" y2="15" />
+														</svg>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div>
+										<dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+											<div class="relative bg-gray-900 pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+												<dt>
+													<div class="absolute rounded-md p-3">
+														<svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+															<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+															<rect x="5" y="5" width="14" height="14" rx="1" />
+															<path d="M9 9h6v6h-6z" />
+															<path d="M3 10h2" />
+															<path d="M3 14h2" />
+															<path d="M10 3v2" />
+															<path d="M14 3v2" />
+															<path d="M21 10h-2" />
+															<path d="M21 14h-2" />
+															<path d="M14 21v-2" />
+															<path d="M10 21v-2" />
+														</svg>
+													</div>
+													<p class="ml-16 text-sm font-medium text-gray-500 truncate">CPU Usage</p>
+												</dt>
+												<dd class="ml-16 flex items-baseline">
+													<p id="stats-cpu-text" class="text-2xl font-semibold text-gray-500">0%</p>
+													<div class="absolute bottom-0 inset-x-0 bg-gray-900 px-4 pb-4 sm:px-6">
+														<div class="w-full bg-gray-800 rounded-full">
+															<div id="stats-cpu-bar" class="bg-blue-600 text-xs font-medium text-blue-100 text-center h-2 leading-none rounded-full" style="width: 0%"></div>
+														</div>
+													</div>
+												</dd>
+											</div>
+								
+											<div class="relative bg-gray-900 pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+												<dt>
+													<div class="absolute rounded-md p-3">
+														<svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+															<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+															<path d="M10 3.2a9 9 0 1 0 10.8 10.8a1 1 0 0 0 -1 -1h-3.8a4.1 4.1 0 1 1 -5 -5v-4a0.9 .9 0 0 0 -1 -.8" />
+															<path d="M15 3.5a9 9 0 0 1 5.5 5.5h-4.5a9 9 0 0 0 -1 -1v-4.5" />
+														</svg>
+													</div>
+													<p class="ml-16 text-sm font-medium text-gray-500 truncate">RAM Usage</p>
+												</dt>
+												<dd class="ml-16 flex items-baseline">
+													<p id="stats-ram-text" class="text-xl font-semibold text-gray-500">0%</p>
+													<div class="absolute bottom-0 inset-x-0 bg-gray-900 px-4 pb-4 sm:px-6">
+														<div class="w-full bg-gray-800 rounded-full">
+															<div id="stats-ram-bar" class="bg-blue-600 text-xs font-medium text-blue-100 text-center h-2 leading-none rounded-full" style="width: 0%"></div>
+														</div>
+													</div>
+												</dd>
+											</div>
+
+											<div class="relative bg-gray-900 pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+												<dt>
+													<div class="absolute rounded-md p-3">
+														<svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+															<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+															<ellipse cx="12" cy="6" rx="8" ry="3"></ellipse>
+															<path d="M4 6v6a8 3 0 0 0 16 0v-6" />
+															<path d="M4 12v6a8 3 0 0 0 16 0v-6" />
+														</svg>
+													</div>
+													<p class="ml-16 text-sm font-medium text-gray-500 truncate">Storage Usage</p>
+												</dt>
+												<dd class="ml-16 flex items-baseline">
+													<p id="stats-storage-text" class="text-xl font-semibold text-gray-500">0%</p>
+													<div class="absolute bottom-0 inset-x-0 bg-gray-900 px-4 pb-4 sm:px-6">
+														<div class="w-full bg-gray-800 rounded-full">
+															<div id="stats-storage-bar" class="bg-blue-600 text-xs font-medium text-blue-100 text-center h-2 leading-none rounded-full" style="width: 0%"></div>
+														</div>
+													</div>
+												</dd>
+											</div>
+
+											<div class="relative bg-gray-900 pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+												<dt>
+													<div class="absolute rounded-md p-3">
+														<svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+															<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+															<circle cx="12" cy="7" r="4" />
+															<path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+														</svg>
+													</div>
+													<p class="ml-16 text-sm font-medium text-gray-500 truncate">Accounts</p>
+												</dt>
+												<dd class="ml-16 flex items-baseline">
+													<p id="stats-accounts-text" class="text-xl font-semibold text-gray-500">0 / 0</p>
+													<div class="absolute bottom-0 inset-x-0 bg-gray-900 px-4 pb-4 sm:px-6">
+														<div class="w-full bg-gray-800 rounded-full">
+															<div id="stats-accounts-bar" class="bg-blue-600 text-xs font-medium text-blue-100 text-center h-2 leading-none rounded-full" style="width: 0%"></div>
+														</div>
+													</div>
+												</dd>
+											</div>
+
+											<div class="relative bg-gray-900 pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+												<dt>
+													<div class="absolute rounded-md p-3">
+														<svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+															<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+															<rect x="5" y="11" width="14" height="10" rx="2" />
+															<circle cx="12" cy="16" r="1" />
+															<path d="M8 11v-4a4 4 0 0 1 8 0v4" />
+														</svg>
+													</div>
+													<p class="ml-16 text-sm font-medium text-gray-500 truncate">Passwords</p>
+												</dt>
+												<dd class="ml-16 flex items-baseline">
+													<p id="stats-passwords-text" class="text-xl font-semibold text-gray-500">0 / 0</p>
+													<div class="absolute bottom-0 inset-x-0 bg-gray-900 px-4 pb-4 sm:px-6">
+														<div class="w-full bg-gray-800 rounded-full">
+															<div id="stats-passwords-bar" class="bg-blue-600 text-xs font-medium text-blue-100 text-center h-2 leading-none rounded-full" style="width: 0%"></div>
+														</div>
+													</div>
+												</dd>
+											</div>
+
+											<div class="relative bg-gray-900 pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+												<dt>
+													<div class="absolute rounded-md p-3">
+														<svg class="h-6 w-6 text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" stroke-width="1.5" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+															<path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+															<circle cx="12" cy="9" r="6" />
+															<polyline points="9 14.2 9 21 12 19 15 21 15 14.2" transform="rotate(-30 12 9)" />
+															<polyline points="9 14.2 9 21 12 19 15 21 15 14.2" transform="rotate(30 12 9)" />
+														</svg>
+													</div>
+													<p class="ml-16 text-sm font-medium text-gray-500 truncate">Server version</p>
+												</dt>
+												<dd class="ml-16 flex items-baseline">
+													<p id="stats-version-text" class="text-2xl font-semibold text-gray-500">0.0.0</p>
+													<div class="absolute bottom-0 inset-x-0 bg-gray-900 px-4 pb-4 sm:px-6">
+														<div class="w-full bg-gray-800 rounded-full">
+															<div id="stats-version-bar" class="bg-blue-600 text-xs font-medium text-blue-100 text-center h-2 leading-none rounded-full" style="width: 0%"></div>
+														</div>
+													</div>
+												</dd>
+											</div>
+
+										</dl>
+									</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-	<footer class="bg-gray-800">
+	<footer class="bg-gray-900">
 		<div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
 			<nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
 				<div class="px-5 py-2">
