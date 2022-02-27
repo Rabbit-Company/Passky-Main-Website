@@ -134,8 +134,9 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 		if (response.ok) return response.json();
 	}).then(json => {
 		if(json.error == 0){
-			document.getElementById("stats-cpu-text").innerText = json.cpu + "%";
-			document.getElementById("stats-cpu-bar").style = "width: " + json.cpu + "%";
+			let cpu = (parseFloat(json.cpu) * 100).toFixed(0);
+			document.getElementById("stats-cpu-text").innerText = cpu + "%";
+			document.getElementById("stats-cpu-bar").style = "width: " + cpu + "%";
 	
 			document.getElementById("stats-ram-text").innerText = formatBytes(json.memoryUsed*1000, 0) + " / " + formatBytes(json.memoryTotal*1000, 0);
 			document.getElementById("stats-ram-bar").style = "width: " + (json.memoryUsed/json.memoryTotal)*100 + "%";
