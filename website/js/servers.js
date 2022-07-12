@@ -71,7 +71,7 @@ for(let i = 0; i < Object.values(servers).length; i++){
 	let json = JSON.parse(jsonData);
 	latencies.push(Number(latency));
 	document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
-	document.getElementById("srv-passwords-" + i).innerText = json.passwords + "/" + (json.maxPasswords * json.maxUsers);
+	document.getElementById("srv-passwords-" + i).innerText = json.passwords + " (" + json.maxPasswords + ")";
 	document.getElementById("srv-version-" + i).innerText = json.version;
 	document.getElementById("srv-latency-" + i).innerText = Number(latency) + " ms";
 	document.getElementById("srv-status-" + i).innerText = "Online";
@@ -105,7 +105,7 @@ function fetchServerInfo(i){
 		localStorage.setItem("latency-" + i, latency);
 		localStorage.setItem("time-" + i, Date.now());
 		document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
-		document.getElementById("srv-passwords-" + i).innerText = json.passwords + "/" + (json.maxPasswords * json.maxUsers);
+		document.getElementById("srv-passwords-" + i).innerText = json.passwords + " (" + json.maxPasswords + ")";
 		document.getElementById("srv-version-" + i).innerText = json.version;
 		document.getElementById("srv-latency-" + i).innerText = latency + " ms";
 		document.getElementById("srv-status-" + i).innerText = "Online";
@@ -158,8 +158,8 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 			document.getElementById("stats-accounts-text").innerText = json.users + " / " + json.maxUsers;
 			document.getElementById("stats-accounts-bar").style = "width: " + (json.users/json.maxUsers)*100 + "%";
 	
-			document.getElementById("stats-passwords-text").innerText = json.passwords + " / " + (json.maxUsers*json.maxPasswords);
-			document.getElementById("stats-passwords-bar").style = "width: " + (json.passwords/(json.maxUsers*json.maxPasswords))*100 + "%";
+			document.getElementById("stats-passwords-text").innerText = json.passwords + " (" + json.maxPasswords + ")";
+			document.getElementById("stats-passwords-bar").style = "width: 0%";
 	
 			document.getElementById("stats-version-text").innerText = json.version;
 		}else{
@@ -192,7 +192,7 @@ function resetInfoStats(){
 	document.getElementById("stats-accounts-text").innerText = "0 / 0";
 	document.getElementById("stats-accounts-bar").style = "width: 0%";
 
-	document.getElementById("stats-passwords-text").innerText = "0 / 0";
+	document.getElementById("stats-passwords-text").innerText = "0 (0)";
 	document.getElementById("stats-passwords-bar").style = "width: 0%";
 
 	document.getElementById("stats-version-text").innerText = "0.0.0";
