@@ -37,7 +37,7 @@ for(let i = 0; i < Object.values(servers).length; i++){
 	let jsonData = localStorage.getItem("data-" + i);
 	let latency = localStorage.getItem("latency-" + i);
 	let jsonTime = localStorage.getItem("time-" + i);
-		
+
 	if(typeof(jsonData) == 'undefined' || jsonData == null){
 		fetchServerInfo(i);
 		continue;
@@ -70,8 +70,12 @@ for(let i = 0; i < Object.values(servers).length; i++){
 
 	let json = JSON.parse(jsonData);
 	latencies.push(Number(latency));
+
+	let maxPasswords = json.maxPasswords;
+	if(maxPasswords < 0) maxPasswords = "∞";
+
 	document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
-	document.getElementById("srv-passwords-" + i).innerText = json.passwords + " (" + json.maxPasswords + ")";
+	document.getElementById("srv-passwords-" + i).innerText = json.passwords + " (" + maxPasswords + ")";
 	document.getElementById("srv-version-" + i).innerText = json.version;
 	document.getElementById("srv-latency-" + i).innerText = Number(latency) + " ms";
 	document.getElementById("srv-status-" + i).innerText = "Online";
@@ -104,8 +108,12 @@ function fetchServerInfo(i){
 		localStorage.setItem("data-" + i, JSON.stringify(json));
 		localStorage.setItem("latency-" + i, latency);
 		localStorage.setItem("time-" + i, Date.now());
+
+		let maxPasswords = json.maxPasswords;
+		if(maxPasswords < 0) maxPasswords = "∞";
+
 		document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
-		document.getElementById("srv-passwords-" + i).innerText = json.passwords + " (" + json.maxPasswords + ")";
+		document.getElementById("srv-passwords-" + i).innerText = json.passwords + " (" + maxPasswords + ")";
 		document.getElementById("srv-version-" + i).innerText = json.version;
 		document.getElementById("srv-latency-" + i).innerText = latency + " ms";
 		document.getElementById("srv-status-" + i).innerText = "Online";
@@ -128,7 +136,7 @@ function changeLatencyColors(latencies){
 
 document.getElementById("server-stats-btn").addEventListener("click", () => {
 	let server = document.getElementById("server").value;
-	 
+
 	fetch("https://" + server + "?action=getStats")
 	.then(response => {
 		if (response.ok) return response.json();
@@ -137,10 +145,10 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 			let cpu = (parseFloat(json.cpu) * 100).toFixed(0);
 			document.getElementById("stats-cpu-text").innerText = cpu + "%";
 			document.getElementById("stats-cpu-bar").style = "width: " + cpu + "%";
-	
+
 			document.getElementById("stats-ram-text").innerText = formatBytes(json.memoryUsed*1000, 0) + " / " + formatBytes(json.memoryTotal*1000, 0);
 			document.getElementById("stats-ram-bar").style = "width: " + (json.memoryUsed/json.memoryTotal)*100 + "%";
-	
+
 			document.getElementById("stats-storage-text").innerText = formatBytes(json.diskUsed, 0) + " / " + formatBytes(json.diskTotal, 0);
 			document.getElementById("stats-storage-bar").style = "width: " + (json.diskUsed/json.diskTotal)*100 + "%";
 		}else{
@@ -157,10 +165,13 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 		if(json.error == 0){
 			document.getElementById("stats-accounts-text").innerText = json.users + " / " + json.maxUsers;
 			document.getElementById("stats-accounts-bar").style = "width: " + (json.users/json.maxUsers)*100 + "%";
-	
-			document.getElementById("stats-passwords-text").innerText = json.passwords + " (" + json.maxPasswords + ")";
+
+			let maxPasswords = json.maxPasswords;
+			if(maxPasswords < 0) maxPasswords = "∞";
+
+			document.getElementById("stats-passwords-text").innerText = json.passwords + " (" + maxPasswords + ")";
 			document.getElementById("stats-passwords-bar").style = "width: 0%";
-	
+
 			document.getElementById("stats-version-text").innerText = json.version;
 		}else{
 			resetInfoStats();
