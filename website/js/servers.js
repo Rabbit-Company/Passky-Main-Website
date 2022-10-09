@@ -24,13 +24,6 @@ for(let i = 0; i < Object.keys(servers).length; i++){
 
 document.getElementById("public-servers-table").innerHTML = srvHtml;
 
-document.getElementById("stats-cpu-bar").style = "width: 0%";
-document.getElementById("stats-ram-bar").style = "width: 0%";
-document.getElementById("stats-storage-bar").style = "width: 0%";
-document.getElementById("stats-accounts-bar").style = "width: 0%";
-document.getElementById("stats-passwords-bar").style = "width: 0%";
-document.getElementById("stats-version-bar").style = "width: 0%";
-
 let latencies = [];
 
 for(let i = 0; i < Object.values(servers).length; i++){
@@ -74,7 +67,12 @@ for(let i = 0; i < Object.values(servers).length; i++){
 	let maxPasswords = json.maxPasswords;
 	if(maxPasswords < 0) maxPasswords = "∞";
 
-	document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
+	if(json.maxUsers >= 0){
+		document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
+	}else{
+		document.getElementById("srv-accounts-" + i).innerText = json.users;
+	}
+
 	document.getElementById("srv-passwords-" + i).innerText = json.passwords + " (" + maxPasswords + ")";
 	document.getElementById("srv-version-" + i).innerText = json.version;
 	document.getElementById("srv-latency-" + i).innerText = Number(latency) + " ms";
@@ -112,7 +110,12 @@ function fetchServerInfo(i){
 		let maxPasswords = json.maxPasswords;
 		if(maxPasswords < 0) maxPasswords = "∞";
 
-		document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
+		if(json.maxUsers >= 0){
+			document.getElementById("srv-accounts-" + i).innerText = json.users + "/" + json.maxUsers;
+		}else{
+			document.getElementById("srv-accounts-" + i).innerText = json.users;
+		}
+
 		document.getElementById("srv-passwords-" + i).innerText = json.passwords + " (" + maxPasswords + ")";
 		document.getElementById("srv-version-" + i).innerText = json.version;
 		document.getElementById("srv-latency-" + i).innerText = latency + " ms";
@@ -163,8 +166,13 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 		if (response.ok) return response.json();
 	}).then(json => {
 		if(json.error == 0){
-			document.getElementById("stats-accounts-text").innerText = json.users + " / " + json.maxUsers;
-			document.getElementById("stats-accounts-bar").style = "width: " + (json.users/json.maxUsers)*100 + "%";
+			if(json.maxUsers >= 0){
+				document.getElementById("stats-accounts-text").innerText = json.users + " / " + json.maxUsers;
+				document.getElementById("stats-accounts-bar").style = "width: " + (json.users/json.maxUsers)*100 + "%";
+			}else{
+				document.getElementById("stats-accounts-text").innerText = json.users;
+				document.getElementById("stats-accounts-bar").style = "width: 0%";
+			}
 
 			let maxPasswords = json.maxPasswords;
 			if(maxPasswords < 0) maxPasswords = "∞";
@@ -200,7 +208,7 @@ function resetStats(){
 }
 
 function resetInfoStats(){
-	document.getElementById("stats-accounts-text").innerText = "0 / 0";
+	document.getElementById("stats-accounts-text").innerText = "0";
 	document.getElementById("stats-accounts-bar").style = "width: 0%";
 
 	document.getElementById("stats-passwords-text").innerText = "0 (0)";

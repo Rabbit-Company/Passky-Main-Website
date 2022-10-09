@@ -844,6 +844,10 @@ video {
   width: 3rem;
 }
 
+.w-0 {
+  width: 0px;
+}
+
 .w-10 {
   width: 2.5rem;
 }
