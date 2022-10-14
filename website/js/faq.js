@@ -1,7 +1,7 @@
 const questions = {
 	"I have forgotten my username. Where can I find it?": "Under 'Sign up' button in Passky Client you will find a button called 'Forgot username?'. If you click this button, a dialog will open and request Passky server and your email. If you have entered the information correctly and clicked on the button 'Send', you will receive an email with all usernames connected with your email.",
 	"I have forgotten my master password. Where can I find it?": "The master password is used to encrypt and decrypt your passwords and messages. Master password never leaves your computer, so if you have forgotten it your data can't be recovered.",
-	"What encryptions does Passky uses?": "Passky uses XChaCha20 for password encryption and Argon2id for hashing passwords.",
+	"What encryptions does Passky uses?": "Passky uses XChaCha20 for password encryption and Argon2id for password hashing (Salt included).",
 	"What happens when my Premium account expire?": "You will still be able to view, edit and delete passwords, but you won't be able to add any new password if you have reached the password limit.",
   "Why do you define Passky as lightweight?": "Passky Server is written with less than 3000 lines of code, while other password managers are usually written with more than 400 000 lines of code. This also makes Passky more maintainable and much harder for bugs and vulnerabilities to squeeze in."
 }
