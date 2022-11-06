@@ -4,7 +4,7 @@
   "description": "Main website for Passky (password manager)",
   "main": "index.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./tailwind.css -o ./website/css/tailwind.min.css"
+    "build": "npx tailwindcss -i ./tailwind.css -o ./website/css/tailwind.min.css --minify"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Rabbit-Company/Passky-Main-Website#readme",
   "devDependencies": {
-    "tailwindcss": "^3.1.8"
+    "tailwindcss": "^3.2.1"
   }
 }
