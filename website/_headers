@@ -2,6 +2,6 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'report-sample' https://analytics.rabbit-company.com https://cdn.sell.app; style-src 'self' 'report-sample' https://cdn.sell.app; object-src 'none'; form-action 'self'; base-uri 'self'; connect-src 'self' https://*.passky.org https://sell.app *; font-src 'self'; frame-src 'self' https://videos.rabbit-company.com https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.co; manifest-src 'self'; media-src 'self'; worker-src 'none'; frame-ancestors 'none';
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'report-sample' https://analytics.rabbit-company.com https://cdn.sell.app; style-src 'self' 'report-sample' https://cdn.sell.app; object-src 'none'; form-action 'self'; base-uri 'self'; connect-src 'self' https://*.passky.org https://sell.app *; font-src 'self'; frame-src 'self' https://videos.rabbit-company.com https://www.youtube-nocookie.com; img-src 'self' data: https://i.ytimg.com; manifest-src 'self'; media-src 'self'; worker-src 'none'; frame-ancestors 'none';
   Permissions-Policy: interest-cohort=()
   Onion-Location: http://gjfdjmyrugqimyq4m6xutgthpwvsb2jeszh3usoemfsidqdbaga7zlyd.onion
