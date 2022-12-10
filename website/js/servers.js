@@ -1,3 +1,7 @@
+let serverReportChart;
+//Chart.defaults.borderColor = '#111827';
+Chart.defaults.color = '#a7abb3';
+
 const servers = {
 	"Europe": {
 		"domain": "https://eu.passky.org",
@@ -179,6 +183,65 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 	}).catch(err => {
 		resetInfoStats();
 	});
+
+	fetch("https://" + server + "?action=getReport")
+	.then(response => {
+		if (response.ok) return response.json();
+	}).then(json => {
+		resetGraph();
+		if(json.error != 0) return;
+		const ctx = document.getElementById('serverReportChart');
+		let dates = [];
+		let newcomers = [];
+
+		let dateTracker = new Date(json.results[0].date);
+		let ncs = 0;
+		for(let i = 0; i < json.results.length; i++){
+			let date = json.results[i].date;
+			let date2 = dateTracker.toISOString().split('T')[0];
+
+			while(date2 != date){
+				dates.push(date2);
+				newcomers.push(ncs);
+				dateTracker.setDate(dateTracker.getDate() + 1);
+				date2 = dateTracker.toISOString().split('T')[0];
+			}
+
+			dates.push(date);
+			ncs += json.results[i].newcomers;
+			newcomers.push(ncs);
+			dateTracker.setDate(dateTracker.getDate() + 1);
+			date2 = dateTracker.toISOString().split('T')[0];
+		}
+
+		serverReportChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: dates,
+				datasets: [{
+					label: 'Accounts',
+					data: newcomers,
+					borderColor: '#2563eb',
+					backgroundColor: '#2563eb',
+					borderWidth: 2
+				}]
+			},
+			options: {
+				scales: {
+					y: {
+						beginAtZero: true
+					}
+				},
+				scale: {
+					ticks: {
+						precision: 0
+					}
+				}
+			}
+		});
+	}).catch(err => {
+		resetGraph();
+	});
 });
 
 function formatBytes(bytes, decimals = 2) {
@@ -207,4 +270,10 @@ function resetInfoStats(){
 	document.getElementById("stats-passwords-bar").style = "width: 0%";
 
 	document.getElementById("stats-version-text").innerText = "0.0.0";
+}
+
+function resetGraph(){
+	try{
+		serverReportChart.destroy();
+	}catch{}
 }
