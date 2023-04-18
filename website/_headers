@@ -4,4 +4,3 @@
   X-XSS-Protection: 1; mode=block
   Content-Security-Policy: default-src 'self'; script-src 'self' https://analytics.rabbit-company.com https://cdn.sellix.io; style-src 'self' 'unsafe-inline' https://cdn.sellix.io; object-src 'none'; form-action 'self'; base-uri 'self'; connect-src 'self' https://*.passky.org *; font-src 'self'; frame-src 'self' https://videos.rabbit-company.com https://www.youtube-nocookie.com https://embed.sellix.io; img-src 'self' data: https://i.ytimg.com https://cdn.sellix.io; manifest-src 'self'; media-src 'self' https://cdn.passky.org; worker-src 'none'; frame-ancestors 'none';
   Permissions-Policy: interest-cohort=()
-  Onion-Location: http://gjfdjmyrugqimyq4m6xutgthpwvsb2jeszh3usoemfsidqdbaga7zlyd.onion
