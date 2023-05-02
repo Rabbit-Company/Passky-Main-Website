@@ -223,7 +223,9 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 					data: newcomers,
 					borderColor: '#2563eb',
 					backgroundColor: '#2563eb',
-					borderWidth: 2
+					borderWidth: 2,
+					pointRadius: 0,
+					pointHitRadius: 3,
 				}]
 			},
 			options: {
