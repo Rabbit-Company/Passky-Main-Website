@@ -229,6 +229,9 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 				}]
 			},
 			options: {
+				interaction: {
+					intersect: false,
+				},
 				scales: {
 					y: {
 						beginAtZero: true
