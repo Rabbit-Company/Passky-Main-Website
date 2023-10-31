@@ -195,6 +195,7 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 		let newcomers = [];
 
 		let dateTracker = new Date(json.results[0].date);
+		dateTracker.setUTCHours(0, 0, 0, 0);
 		let ncs = 0;
 		for(let i = 0; i < json.results.length; i++){
 			let date = json.results[i].date;
@@ -203,14 +204,14 @@ document.getElementById("server-stats-btn").addEventListener("click", () => {
 			while(date2 != date){
 				dates.push(date2);
 				newcomers.push(ncs);
-				dateTracker.setDate(dateTracker.getDate() + 1);
+				dateTracker.setUTCDate(dateTracker.getUTCDate() + 1);
 				date2 = dateTracker.toISOString().split('T')[0];
 			}
 
 			dates.push(date);
 			ncs += json.results[i].newcomers;
 			newcomers.push(ncs);
-			dateTracker.setDate(dateTracker.getDate() + 1);
+			dateTracker.setUTCDate(dateTracker.getUTCDate() + 1);
 			date2 = dateTracker.toISOString().split('T')[0];
 		}
 
