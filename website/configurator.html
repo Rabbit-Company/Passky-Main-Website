@@ -634,6 +634,30 @@
 												Select SQLite if you are unsure how to self-host a MySQL database or if you are setting up a small instance. SQLite is a lightweight,
 												file-based database that is easy to manage.
 											</p>
+
+											<label for="database-cache-type" class="mt-2 block text-sm font-medium leading-6 text-gray-400"
+												>Database Cache Type <span class="text-red-400">*</span></label
+											>
+											<div class="mt-2">
+												<select
+													id="database-cache-type"
+													name="database-cache-type"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+												>
+													<option value="0">No Cache</option>
+													<option value="1">Estimated Row Count</option>
+													<option value="2">Daily Accurate Row Count</option>
+													<option value="3">Daily Estimated Row Count</option>
+												</select>
+												<p class="mt-2 text-sm leading-6 text-gray-500">
+													<ul class="list-disc text-gray-500 text-sm leading-6">
+														<li><b>No Cache</b>: Disables caching. Data is retrieved directly from the database without using a cache.</li>
+														<li><b>Estimated Row Count</b>: Retrieves an estimated number of rows. Provides faster performance with less accuracy.</li>
+														<li><b>Daily Accurate Row Count</b>: Retrieves an accurate row count, but this is calculated only once per day. The same value is returned throughout the day.</li>
+														<li><b>Daily Estimated Row Count</b>: Retrieves an estimated row count, calculated once per day. The same value is returned throughout the day for better performance with reasonable accuracy.</li>
+													</ul>
+												</p>
+											</div>
 										</fieldset>
 										<div id="sqlite-settings" class="sm:col-span-4 w-full p-4 bg-gray-700 rounded-md">
 											<div class="sm:col-span-4">
