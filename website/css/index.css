@@ -1,23 +1,34 @@
 /*
-    Scroll bar
+	Scroll bar
 */
 
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+	width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #161B22;
+	background: #161b22;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4b5563;
+	background: #4b5563;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #374151;
+	background: #374151;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
 }
