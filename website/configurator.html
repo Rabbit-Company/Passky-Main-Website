@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Passky</title>
+		<meta name="description" content="Passky is a simple, modern, lightweight, open-source and secure password manager." />
+		<meta name="keywords" content="Passky, passky, Password manager, password manager, open source" />
+		<meta name="author" content="Rabbit Company" />
+		<link rel="shortcut icon" type="image/png" href="images/logo.png" />
+		<link rel="stylesheet" type="text/css" href="css/tailwind.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="canonical" href="https://passky.org/configurator" />
+	</head>
+	<body class="bg-gray-800">
+		<nav class="bg-gray-800">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="flex items-center justify-between h-16">
+					<div class="flex items-center">
+						<div class="flex-shrink-0">
+							<img class="block h-8 w-auto" src="images/logo.png" alt="Passky" width="32" height="32" />
+						</div>
+						<div class="hidden sm:block sm:ml-6">
+							<div class="flex space-x-4">
+								<a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+								<a href="download.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Download</a>
+								<a href="pricing.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+								<a href="servers.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Servers</a>
+								<a href="donation.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Donation</a>
+								<a href="affiliates.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Affiliates</a>
+								<a href="contact.html" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+							</div>
+						</div>
+					</div>
+					<div class="hidden md:flex space-x-4 items-center justify-end md:flex-1 lg:w-0">
+						<a
+							href="https://status.passky.org"
+							target="_blank"
+							class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+							>Status</a
+						>
+						<a href="https://vault.passky.org" target="_blank" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+							>Log in</a
+						>
+						<a
+							href="https://vault.passky.org/register"
+							target="_blank"
+							class="bg-indigo-600 text-gray-100 hover:bg-indigo-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+							>Sign up</a
+						>
+					</div>
+					<div class="-mr-2 flex sm:hidden">
+						<button
+							id="main-menu-btn"
+							type="button"
+							class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none"
+							aria-controls="mobile-menu"
+							aria-expanded="false"
+						>
+							<span class="sr-only">Open main menu</span>
+							<svg
+								id="main-menu-icon"
+								class="block h-6 w-6"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke="currentColor"
+								aria-hidden="true"
+							>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+							</svg>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="sm:hidden hidden" id="mobile-menu">
+				<div class="px-2 pt-2 pb-3 space-y-1">
+					<a href="index.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+					<a href="download.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Download</a>
+					<a href="pricing.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+					<a href="servers.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Servers</a>
+					<a href="donation.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Donation</a>
+					<a href="affiliates.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Affiliates</a>
+					<a href="contact.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+					<a
+						href="https://status.passky.org"
+						target="_blank"
+						class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+						>Status</a
+					>
+					<a
+						href="https://vault.passky.org"
+						target="_blank"
+						class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+						>Log in</a
+					>
+					<a
+						href="https://vault.passky.org/register"
+						target="_blank"
+						class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+						>Sign up</a
+					>
+				</div>
+			</div>
+		</nav>
+		<div class="bg-gray-900">
+			<div class="mx-auto py-12 px-4 max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+				<div class="space-y-12">
+					<div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+						<h2 class="text-3xl font-extrabold text-white tracking-tight sm:text-4xl mb-4">Passky Server Configurator</h2>
+						<span class="text-sm text-gray-500"
+							>This intuitive tool guides you through a series of simple questions to gather the necessary information for your Passky server setup. Once you've
+							provided the details, the configurator generates a custom .env file tailored to your specifications. Simply upload this file to your server, and
+							you're ready to go.</span
+						>
+					</div>
+
+					<div class="space-y-12">
+						<div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+							<div class="px-4 sm:px-0">
+								<h2 class="text-base font-semibold leading-7 text-gray-400">Server Settings</h2>
+								<p class="mt-1 text-sm leading-6 text-gray-500">Settings for the server where Passky Server is deployed.</p>
+							</div>
+
+							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+								<div class="px-4 py-6 sm:p-8">
+									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+										<div class="sm:col-span-4">
+											<label for="server-cores" class="block text-sm font-medium leading-6 text-gray-400"
+												>Number of vCPUs <span class="text-red-400">*</span></label
+											>
+											<div class="mt-2">
+												<input
+													id="server-cores"
+													name="server-cores"
+													type="number"
+													value="1"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													Specifies the number of virtual CPUs allocated to the server. This setting helps calculate CPU usage. If you are unsure of the
+													appropriate number, use 1 as a default value.
+												</p>
+											</div>
+										</div>
+
+										<div class="sm:col-span-4">
+											<label for="country" class="block text-sm font-medium leading-6 text-gray-400">Country <span class="text-red-400">*</span></label>
+											<div class="mt-2">
+												<select
+													id="server-country"
+													name="country"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+												>
+													<option value="AF">Afghanistan</option>
+													<option value="AX">Åland Islands</option>
+													<option value="AL">Albania</option>
+													<option value="DZ">Algeria</option>
+													<option value="AS">American Samoa</option>
+													<option value="AD">Andorra</option>
+													<option value="AO">Angola</option>
+													<option value="AI">Anguilla</option>
+													<option value="AQ">Antarctica</option>
+													<option value="AG">Antigua and Barbuda</option>
+													<option value="AR">Argentina</option>
+													<option value="AM">Armenia</option>
+													<option value="AW">Aruba</option>
+													<option value="AU">Australia</option>
+													<option value="AT">Austria</option>
+													<option value="AZ">Azerbaijan</option>
+													<option value="BS">Bahamas</option>
+													<option value="BH">Bahrain</option>
+													<option value="BD">Bangladesh</option>
+													<option value="BB">Barbados</option>
+													<option value="BY">Belarus</option>
+													<option value="BE">Belgium</option>
+													<option value="BZ">Belize</option>
+													<option value="BJ">Benin</option>
+													<option value="BM">Bermuda</option>
+													<option value="BT">Bhutan</option>
+													<option value="BO">Bolivia, Plurinational State of</option>
+													<option value="BQ">Bonaire, Sint Eustatius and Saba</option>
+													<option value="BA">Bosnia and Herzegovina</option>
+													<option value="BW">Botswana</option>
+													<option value="BV">Bouvet Island</option>
+													<option value="BR">Brazil</option>
+													<option value="IO">British Indian Ocean Territory</option>
+													<option value="BN">Brunei Darussalam</option>
+													<option value="BG">Bulgaria</option>
+													<option value="BF">Burkina Faso</option>
+													<option value="BI">Burundi</option>
+													<option value="KH">Cambodia</option>
+													<option value="CM">Cameroon</option>
+													<option value="CA">Canada</option>
+													<option value="CV">Cape Verde</option>
+													<option value="KY">Cayman Islands</option>
+													<option value="CF">Central African Republic</option>
+													<option value="TD">Chad</option>
+													<option value="CL">Chile</option>
+													<option value="CN">China</option>
+													<option value="CX">Christmas Island</option>
+													<option value="CC">Cocos (Keeling) Islands</option>
+													<option value="CO">Colombia</option>
+													<option value="KM">Comoros</option>
+													<option value="CG">Congo</option>
+													<option value="CD">Congo, the Democratic Republic of the</option>
+													<option value="CK">Cook Islands</option>
+													<option value="CR">Costa Rica</option>
+													<option value="CI">Côte d'Ivoire</option>
+													<option value="HR">Croatia</option>
+													<option value="CU">Cuba</option>
+													<option value="CW">Curaçao</option>
+													<option value="CY">Cyprus</option>
+													<option value="CZ">Czech Republic</option>
+													<option value="DK">Denmark</option>
+													<option value="DJ">Djibouti</option>
+													<option value="DM">Dominica</option>
+													<option value="DO">Dominican Republic</option>
+													<option value="EC">Ecuador</option>
+													<option value="EG">Egypt</option>
+													<option value="SV">El Salvador</option>
+													<option value="GQ">Equatorial Guinea</option>
+													<option value="ER">Eritrea</option>
+													<option value="EE">Estonia</option>
+													<option value="ET">Ethiopia</option>
+													<option value="FK">Falkland Islands (Malvinas)</option>
+													<option value="FO">Faroe Islands</option>
+													<option value="FJ">Fiji</option>
+													<option value="FI">Finland</option>
+													<option value="FR">France</option>
+													<option value="GF">French Guiana</option>
+													<option value="PF">French Polynesia</option>
+													<option value="TF">French Southern Territories</option>
+													<option value="GA">Gabon</option>
+													<option value="GM">Gambia</option>
+													<option value="GE">Georgia</option>
+													<option value="DE">Germany</option>
+													<option value="GH">Ghana</option>
+													<option value="GI">Gibraltar</option>
+													<option value="GR">Greece</option>
+													<option value="GL">Greenland</option>
+													<option value="GD">Grenada</option>
+													<option value="GP">Guadeloupe</option>
+													<option value="GU">Guam</option>
+													<option value="GT">Guatemala</option>
+													<option value="GG">Guernsey</option>
+													<option value="GN">Guinea</option>
+													<option value="GW">Guinea-Bissau</option>
+													<option value="GY">Guyana</option>
+													<option value="HT">Haiti</option>
+													<option value="HM">Heard Island and McDonald Islands</option>
+													<option value="VA">Holy See (Vatican City State)</option>
+													<option value="HN">Honduras</option>
+													<option value="HK">Hong Kong</option>
+													<option value="HU">Hungary</option>
+													<option value="IS">Iceland</option>
+													<option value="IN">India</option>
+													<option value="ID">Indonesia</option>
+													<option value="IR">Iran, Islamic Republic of</option>
+													<option value="IQ">Iraq</option>
+													<option value="IE">Ireland</option>
+													<option value="IM">Isle of Man</option>
+													<option value="IL">Israel</option>
+													<option value="IT">Italy</option>
+													<option value="JM">Jamaica</option>
+													<option value="JP">Japan</option>
+													<option value="JE">Jersey</option>
+													<option value="JO">Jordan</option>
+													<option value="KZ">Kazakhstan</option>
+													<option value="KE">Kenya</option>
+													<option value="KI">Kiribati</option>
+													<option value="KP">Korea, Democratic People's Republic of</option>
+													<option value="KR">Korea, Republic of</option>
+													<option value="KW">Kuwait</option>
+													<option value="KG">Kyrgyzstan</option>
+													<option value="LA">Lao People's Democratic Republic</option>
+													<option value="LV">Latvia</option>
+													<option value="LB">Lebanon</option>
+													<option value="LS">Lesotho</option>
+													<option value="LR">Liberia</option>
+													<option value="LY">Libya</option>
+													<option value="LI">Liechtenstein</option>
+													<option value="LT">Lithuania</option>
+													<option value="LU">Luxembourg</option>
+													<option value="MO">Macao</option>
+													<option value="MK">Macedonia, The Former Yugoslav Republic of</option>
+													<option value="MG">Madagascar</option>
+													<option value="MW">Malawi</option>
+													<option value="MY">Malaysia</option>
+													<option value="MV">Maldives</option>
+													<option value="ML">Mali</option>
+													<option value="MT">Malta</option>
+													<option value="MH">Marshall Islands</option>
+													<option value="MQ">Martinique</option>
+													<option value="MR">Mauritania</option>
+													<option value="MU">Mauritius</option>
+													<option value="YT">Mayotte</option>
+													<option value="MX">Mexico</option>
+													<option value="FM">Micronesia, Federated States of</option>
+													<option value="MD">Moldova, Republic of</option>
+													<option value="MC">Monaco</option>
+													<option value="MN">Mongolia</option>
+													<option value="ME">Montenegro</option>
+													<option value="MS">Montserrat</option>
+													<option value="MA">Morocco</option>
+													<option value="MZ">Mozambique</option>
+													<option value="MM">Myanmar</option>
+													<option value="NA">Namibia</option>
+													<option value="NR">Nauru</option>
+													<option value="NP">Nepal</option>
+													<option value="NL">Netherlands</option>
+													<option value="NC">New Caledonia</option>
+													<option value="NZ">New Zealand</option>
+													<option value="NI">Nicaragua</option>
+													<option value="NE">Niger</option>
+													<option value="NG">Nigeria</option>
+													<option value="NU">Niue</option>
+													<option value="NF">Norfolk Island</option>
+													<option value="MP">Northern Mariana Islands</option>
+													<option value="NO">Norway</option>
+													<option value="OM">Oman</option>
+													<option value="PK">Pakistan</option>
+													<option value="PW">Palau</option>
+													<option value="PS">Palestinian Territory, Occupied</option>
+													<option value="PA">Panama</option>
+													<option value="PG">Papua New Guinea</option>
+													<option value="PY">Paraguay</option>
+													<option value="PE">Peru</option>
+													<option value="PH">Philippines</option>
+													<option value="PN">Pitcairn</option>
+													<option value="PL">Poland</option>
+													<option value="PT">Portugal</option>
+													<option value="PR">Puerto Rico</option>
+													<option value="QA">Qatar</option>
+													<option value="RE">Réunion</option>
+													<option value="RO">Romania</option>
+													<option value="RU">Russian Federation</option>
+													<option value="RW">Rwanda</option>
+													<option value="BL">Saint Barthélemy</option>
+													<option value="SH">Saint Helena, Ascension and Tristan da Cunha</option>
+													<option value="KN">Saint Kitts and Nevis</option>
+													<option value="LC">Saint Lucia</option>
+													<option value="MF">Saint Martin (French part)</option>
+													<option value="PM">Saint Pierre and Miquelon</option>
+													<option value="VC">Saint Vincent and the Grenadines</option>
+													<option value="WS">Samoa</option>
+													<option value="SM">San Marino</option>
+													<option value="ST">Sao Tome and Principe</option>
+													<option value="SA">Saudi Arabia</option>
+													<option value="SN">Senegal</option>
+													<option value="RS">Serbia</option>
+													<option value="SC">Seychelles</option>
+													<option value="SL">Sierra Leone</option>
+													<option value="SG">Singapore</option>
+													<option value="SX">Sint Maarten (Dutch part)</option>
+													<option value="SK">Slovakia</option>
+													<option value="SI">Slovenia</option>
+													<option value="SB">Solomon Islands</option>
+													<option value="SO">Somalia</option>
+													<option value="ZA">South Africa</option>
+													<option value="GS">South Georgia and the South Sandwich Islands</option>
+													<option value="SS">South Sudan</option>
+													<option value="ES">Spain</option>
+													<option value="LK">Sri Lanka</option>
+													<option value="SD">Sudan</option>
+													<option value="SR">Suriname</option>
+													<option value="SJ">Svalbard and Jan Mayen</option>
+													<option value="SZ">Swaziland</option>
+													<option value="SE">Sweden</option>
+													<option value="CH">Switzerland</option>
+													<option value="SY">Syrian Arab Republic</option>
+													<option value="TW">Taiwan, Province of China</option>
+													<option value="TJ">Tajikistan</option>
+													<option value="TZ">Tanzania, United Republic of</option>
+													<option value="TH">Thailand</option>
+													<option value="TL">Timor-Leste</option>
+													<option value="TG">Togo</option>
+													<option value="TK">Tokelau</option>
+													<option value="TO">Tonga</option>
+													<option value="TT">Trinidad and Tobago</option>
+													<option value="TN">Tunisia</option>
+													<option value="TR">Turkey</option>
+													<option value="TM">Turkmenistan</option>
+													<option value="TC">Turks and Caicos Islands</option>
+													<option value="TV">Tuvalu</option>
+													<option value="UG">Uganda</option>
+													<option value="UA">Ukraine</option>
+													<option value="AE">United Arab Emirates</option>
+													<option value="GB">United Kingdom</option>
+													<option selected value="US">United States</option>
+													<option value="UM">United States Minor Outlying Islands</option>
+													<option value="UY">Uruguay</option>
+													<option value="UZ">Uzbekistan</option>
+													<option value="VU">Vanuatu</option>
+													<option value="VE">Venezuela, Bolivarian Republic of</option>
+													<option value="VN">Viet Nam</option>
+													<option value="VG">Virgin Islands, British</option>
+													<option value="VI">Virgin Islands, U.S.</option>
+													<option value="WF">Wallis and Futuna</option>
+													<option value="EH">Western Sahara</option>
+													<option value="YE">Yemen</option>
+													<option value="ZM">Zambia</option>
+													<option value="ZW">Zimbabwe</option>
+												</select>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													This field is used to indicate the country where the server is located. It is primarily for public information, allowing users to
+													choose servers that are geographically closest to them or to select servers in a specific country for data residency preferences.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+							<div class="px-4 sm:px-0">
+								<h2 class="text-base font-semibold leading-7 text-gray-400">Admin Panel Settings</h2>
+								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to Admin Panel.</p>
+							</div>
+
+							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+								<div class="px-4 py-6 sm:p-8">
+									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+										<div class="sm:col-span-4">
+											<label for="admin-username" class="block text-sm font-medium leading-6 text-gray-400">Username <span class="text-red-400">*</span></label>
+											<div class="mt-2">
+												<input
+													id="admin-username"
+													name="admin-username"
+													type="text"
+													value="admin"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													Enter the username for accessing the Admin Panel. This username is required to log in and manage administrative settings and
+													functions.
+												</p>
+											</div>
+										</div>
+
+										<div class="sm:col-span-4">
+											<label for="admin-password" class="block text-sm font-medium leading-6 text-gray-400">Password <span class="text-red-400">*</span></label>
+											<div class="mt-2">
+												<input
+													id="admin-password"
+													name="admin-password"
+													type="password"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													Enter a secure password for accessing the Admin Panel. This password protects administrative functions and settings, so choose a
+													strong, unique password to ensure the security of your system.
+												</p>
+											</div>
+										</div>
+
+										<div class="sm:col-span-4">
+											<label for="admin-captcha-sitekey" class="block text-sm font-medium leading-6 text-gray-400"
+												>Captcha (Cloudflare Turnstile) <span class="text-red-400">*</span></label
+											>
+											<div class="mt-2 bg-yellow-900 pr-4 pl-4 pt-2 pb-2 rounded-md">
+												<label class="text-xs font-medium text-yellow-500">Use the default settings if you do not provide your own.</label>
+											</div>
+											<div class="mt-2">
+												<label for="admin-captcha-sitekey" class="text-sm font-medium text-gray-500">Site Key</label>
+												<input
+													id="admin-captcha-sitekey"
+													name="admin-captcha-sitekey"
+													type="text"
+													value="1x00000000000000000000AA"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-500 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 mb-2 text-sm leading-6 text-gray-500">
+													Enter the Site Key provided by
+													<a class="text-blue-400" href="https://developers.cloudflare.com/turnstile/get-started/#get-a-sitekey-and-secret-key" target="_blank"
+														>Cloudflare Turnstile</a
+													>. This key is used to integrate the captcha service into your site and display the captcha widget to users.
+												</p>
+												<label for="admin-captcha-secretkey" class="mt-4 text-sm font-medium text-gray-500">Secret Key</label>
+												<input
+													id="admin-captcha-secretkey"
+													name="admin-captcha-secretkey"
+													type="password"
+													value="1x0000000000000000000000000000000AA"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-500 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													Enter the Secret Key provided by
+													<a class="text-blue-400" href="https://developers.cloudflare.com/turnstile/get-started/#get-a-sitekey-and-secret-key" target="_blank"
+														>Cloudflare Turnstile</a
+													>. This key is used for server-side verification of captcha responses to ensure they are valid and secure.
+												</p>
+											</div>
+										</div>
+
+										<div class="sm:col-span-4">
+											<label for="admin-captcha-sitekey" class="block text-sm font-medium leading-6 text-gray-400"
+												>YubiKey <span class="text-red-400">*</span></label
+											>
+											<div class="mt-2 bg-yellow-900 pr-4 pl-4 pt-2 pb-2 rounded-md">
+												<label class="text-xs font-medium text-yellow-500">Use the default settings if you do not provide your own.</label>
+											</div>
+											<div class="mt-2">
+												<label for="yubi-cloud" class="text-sm font-medium text-gray-500">YubiCloud</label>
+												<input
+													id="yubi-cloud"
+													name="yubi-cloud"
+													type="text"
+													value="https://api.yubico.com/wsapi/2.0/verify"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-500 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 mb-2 text-sm leading-6 text-gray-500">If you want to self host YubiCloud you can change this URL to your own.</p>
+												<label for="yubi-id" class="mt-4 text-sm font-medium text-gray-500">Yubi ID</label>
+												<input
+													id="yubi-id"
+													name="yubi-id"
+													type="number"
+													value="67857"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-500 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													You can use our ID, or create your own
+													<a class="text-blue-400" href="https://upgrade.yubico.com/getapikey/" target="_blank">here</a>.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+							<div class="px-4 sm:px-0">
+								<h2 class="text-base font-semibold leading-7 text-gray-400">Account Settings</h2>
+								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to accounts.</p>
+							</div>
+
+							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+								<div class="px-4 py-6 sm:p-8">
+									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+										<div class="sm:col-span-4">
+											<label for="account-max" class="block text-sm font-medium leading-6 text-gray-400"
+												>Account Limit <span class="text-red-400">*</span></label
+											>
+											<div class="mt-2">
+												<input
+													id="account-max"
+													name="account-max"
+													type="number"
+													value="100"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													Specify the maximum number of accounts that can be created on this Passky server. Enter a numerical value to set a limit, or use -1
+													for unlimited accounts.
+												</p>
+											</div>
+										</div>
+
+										<div class="sm:col-span-4">
+											<label for="account-password-limit" class="block text-sm font-medium leading-6 text-gray-400"
+												>Passwords per Account Limit <span class="text-red-400">*</span></label
+											>
+											<div class="mt-2">
+												<input
+													id="account-password-limit"
+													name="account-password-limit"
+													type="number"
+													value="1000"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													Specify the maximum number of passwords that each account can store. Enter a numerical value to set a limit, or use -1 for unlimited
+													passwords. This limit will apply to all newly created accounts. Note that you can still change this value for individual accounts
+													within the Admin Panel.
+												</p>
+											</div>
+										</div>
+
+										<div class="sm:col-span-4">
+											<label for="account-premium" class="block text-sm font-medium leading-6 text-gray-400"
+												>Passwords per Premium Account Limit <span class="text-red-400">*</span></label
+											>
+											<div class="mt-2">
+												<input
+													id="account-premium"
+													name="account-premium"
+													type="number"
+													value="-1"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+												/>
+												<p class="mt-1 text-sm leading-6 text-gray-500">
+													Specify the maximum number of passwords that each premium account can store. Enter a numerical value to set a limit, or use -1 for
+													unlimited passwords. This limit will apply to all accounts upgraded to premium status. In the Admin Panel, license keys can be
+													generated and, when used by users, this limit will then apply to their accounts.
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+							<div class="px-4 sm:px-0">
+								<h2 class="text-base font-semibold leading-7 text-gray-400">Database Settings</h2>
+								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to a database.</p>
+							</div>
+
+							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+								<div class="px-4 py-6 sm:p-8">
+									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+										<fieldset class="sm:col-span-4">
+											<legend class="text-sm font-semibold leading-6 text-gray-400">Database Type <span class="text-red-400">*</span></legend>
+											<p class="mt-1 text-sm leading-6 text-gray-500">Choose the type of database for your Passky server.</p>
+											<div class="mt-6 space-y-2">
+												<div class="flex items-center gap-x-3">
+													<input
+														checked
+														id="database-sqlite"
+														name="database-type"
+														type="radio"
+														class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+													/>
+													<label for="database-sqlite" class="block text-sm font-medium leading-6 text-gray-400">SQLite</label>
+												</div>
+												<div class="flex items-center gap-x-3">
+													<input id="database-mysql" name="database-type" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600" />
+													<label for="database-mysql" class="block text-sm font-medium leading-6 text-gray-400">MySQL</label>
+												</div>
+											</div>
+											<p class="mt-4 text-sm leading-6 text-gray-500">
+												Select SQLite if you are unsure how to self-host a MySQL database or if you are setting up a small instance. SQLite is a lightweight,
+												file-based database that is easy to manage.
+											</p>
+										</fieldset>
+										<div id="sqlite-settings" class="sm:col-span-4 w-full p-4 bg-gray-700 rounded-md">
+											<div class="sm:col-span-4">
+												<label for="sqlite-name" class="block text-sm font-medium leading-6 text-gray-400"
+													>SQLite Settings <span class="text-red-400">*</span></label
+												>
+												<div class="mt-2">
+													<label for="sqlite-name" class="text-sm font-medium text-gray-500">File Name</label>
+													<input
+														id="sqlite-name"
+														name="sqlite-name"
+														type="text"
+														value="passky"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<p class="mt-1 text-sm leading-6 text-gray-500">
+														Enter the name of the SQLite file (without the extension) that will be used to store your data.
+													</p>
+												</div>
+											</div>
+										</div>
+										<div id="mysql-settings" class="hidden sm:col-span-4 w-full p-4 bg-gray-700 rounded-md">
+											<div class="sm:col-span-4">
+												<label for="sqlite-name" class="block text-sm font-medium leading-6 text-gray-400"
+													>MySQL Settings <span class="text-red-400">*</span></label
+												>
+												<div class="mt-2">
+													<label for="mysql-host" class="text-sm font-medium text-gray-500">Host</label>
+													<input
+														id="mysql-host"
+														name="mysql-host"
+														type="text"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="mysql-port" class="text-sm font-medium text-gray-500">Port</label>
+													<input
+														id="mysql-port"
+														name="mysql-port"
+														type="number"
+														value="3306"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="mysql-database" class="text-sm font-medium text-gray-500">Database</label>
+													<input
+														id="mysql-database"
+														name="mysql-database"
+														type="text"
+														value="passky"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="mysql-user" class="text-sm font-medium text-gray-500">User</label>
+													<input
+														id="mysql-user"
+														name="mysql-user"
+														type="text"
+														value="passky"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="mysql-password" class="text-sm font-medium text-gray-500">Password</label>
+													<input
+														id="mysql-password"
+														name="mysql-password"
+														type="password"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<div class="mt-2 flex items-center gap-x-3">
+														<input
+															checked
+															id="mysql-ssl"
+															name="mysql-ssl"
+															type="checkbox"
+															class="mt-2 mb-2 block rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														/>
+														<label for="mysql-ssl" class="mt-2 mb-2 block text-sm font-medium leading-6 text-gray-400">Use SSL</label>
+													</div>
+													<label for="mysql-ca-certificate" class="mt-2 text-sm font-medium text-gray-500">CA Certificate</label>
+													<input
+														id="mysql-ca-certificate"
+														name="mysql-ca-certificate"
+														type="text"
+														value="/etc/ssl/certs/ca-certificates.crt"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+							<div class="px-4 sm:px-0">
+								<h2 class="text-base font-semibold leading-7 text-gray-400">Cache Settings</h2>
+								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to cache.</p>
+							</div>
+
+							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+								<div class="px-4 py-6 sm:p-8">
+									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+										<fieldset class="sm:col-span-4">
+											<legend class="text-sm font-semibold leading-6 text-gray-400">Cache Type <span class="text-red-400">*</span></legend>
+											<p class="mt-1 text-sm leading-6 text-gray-500">Choose the type of cache for your Passky server.</p>
+											<div class="mt-2 bg-yellow-900 pr-4 pl-4 pt-2 pb-2 rounded-md">
+												<label class="text-xs font-medium text-yellow-500">When using the official Docker image, use the default Redis configuration.</label>
+											</div>
+											<div class="mt-6 space-y-2">
+												<div class="flex items-center gap-x-3">
+													<input
+														checked
+														id="cache-redis"
+														name="cache-redis"
+														type="radio"
+														class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+													/>
+													<label for="cache-redis" class="block text-sm font-medium leading-6 text-gray-400">Redis</label>
+												</div>
+											</div>
+										</fieldset>
+										<div class="sm:col-span-4 w-full p-4 bg-gray-700 rounded-md">
+											<div class="sm:col-span-4">
+												<label for="redis-internal-host" class="block text-sm font-medium leading-6 text-gray-400"
+													>Internal Cache (Redis) <span class="text-red-400">*</span></label
+												>
+												<div class="mt-2">
+													<label for="redis-internal-host" class="text-sm font-medium text-gray-500">Host</label>
+													<input
+														id="redis-internal-host"
+														name="redis-internal-host"
+														type="text"
+														value="127.0.0.1"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="redis-internal-port" class="mt-1 text-sm font-medium text-gray-500">Port</label>
+													<input
+														id="redis-internal-port"
+														name="redis-internal-port"
+														type="number"
+														value="6379"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="redis-internal-password" class="mt-1 text-sm font-medium text-gray-500">Password</label>
+													<input
+														id="redis-internal-password"
+														name="redis-internal-password"
+														type="password"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<p class="mt-1 text-sm leading-6 text-gray-500">
+														Configure internal Redis cache for your Passky server. This option is suitable for most deployments, providing efficient caching
+														within the server.
+													</p>
+												</div>
+											</div>
+											<div class="sm:col-span-4 mt-4">
+												<label for="redis-external-host" class="block text-sm font-medium leading-6 text-gray-400"
+													>External Cache (Redis) <span class="text-red-400">*</span></label
+												>
+												<div class="mt-2">
+													<label for="redis-external-host" class="text-sm font-medium text-gray-500">Host</label>
+													<input
+														id="redis-external-host"
+														name="redis-external-host"
+														type="text"
+														value="127.0.0.1"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="redis-external-port" class="mt-1 text-sm font-medium text-gray-500">Port</label>
+													<input
+														id="redis-external-port"
+														name="redis-external-port"
+														type="number"
+														value="6379"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="redis-external-password" class="mt-1 text-sm font-medium text-gray-500">Password</label>
+													<input
+														id="redis-external-password"
+														name="redis-external-password"
+														type="password"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<p class="mt-1 text-sm leading-6 text-gray-500">
+														Configure the external Redis cache for high availability deployments with multiple Passky servers. This option is recommended for
+														advanced setups requiring distributed caching. If you do not plan to use an external Redis instance, use the same configuration as
+														the internal Redis cache.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+							<div class="px-4 sm:px-0">
+								<h2 class="text-base font-semibold leading-7 text-gray-400">Email Settings</h2>
+								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to email.</p>
+							</div>
+
+							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+								<div class="px-4 py-6 sm:p-8">
+									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+										<fieldset class="sm:col-span-4">
+											<legend class="text-sm font-semibold leading-6 text-gray-400">Email Sending Method <span class="text-red-400">*</span></legend>
+											<p class="mt-1 text-sm leading-6 text-gray-500">Choose the method of sending emails for your Passky server.</p>
+											<div class="mt-6 space-y-2">
+												<div class="flex items-center gap-x-3">
+													<input
+														checked
+														id="email-disabled"
+														name="email-method"
+														type="radio"
+														class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+													/>
+													<label for="email-disabled" class="block text-sm font-medium leading-6 text-gray-400">Disabled</label>
+												</div>
+												<div class="flex items-center gap-x-3">
+													<input id="email-smtp" name="email-method" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600" />
+													<label for="email-smtp" class="block text-sm font-medium leading-6 text-gray-400">SMTP</label>
+												</div>
+											</div>
+										</fieldset>
+										<div id="smtp-settings" class="hidden sm:col-span-4 w-full p-4 bg-gray-700 rounded-md">
+											<div class="sm:col-span-4">
+												<label for="smtp-host" class="block text-sm font-medium leading-6 text-gray-400"
+													>SMTP Settings <span class="text-red-400">*</span></label
+												>
+												<div class="mt-2">
+													<label for="smtp-host" class="text-sm font-medium text-gray-500">Host</label>
+													<input
+														id="smtp-host"
+														name="smtp-host"
+														type="text"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="smtp-port" class="mt-1 text-sm font-medium text-gray-500">Port</label>
+													<input
+														id="smtp-port"
+														name="smtp-port"
+														type="number"
+														value="465"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="smtp-username" class="mt-1 text-sm font-medium text-gray-500">Username</label>
+													<input
+														id="smtp-username"
+														name="smtp-username"
+														type="text"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="smtp-password" class="mt-1 text-sm font-medium text-gray-500">Password</label>
+													<input
+														id="smtp-password"
+														name="smtp-password"
+														type="password"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<div class="flex items-center gap-x-3">
+														<input
+															checked
+															id="smtp-tls"
+															name="smtp-tls"
+															type="checkbox"
+															class="mt-2 block rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														/>
+														<label for="smtp-tls" class="mt-2 block text-sm font-medium leading-6 text-gray-400">Use TLS</label>
+													</div>
+													<p class="mt-1 text-sm leading-6 text-gray-500">
+														Enter your SMTP credentials to enable email sending functionality. Currently, email sending is only used for scenarios where a user
+														forgets their username. In such cases, the system will automatically send an email containing the forgotten username to the
+														registered email address.
+													</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="grid grid-cols-1 gap-x-8 gap-y-8 md:grid-cols-3">
+							<div class="px-4 sm:px-0">
+								<h2 class="text-base font-semibold leading-7 text-gray-400">API Settings</h2>
+								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to API endpoints.</p>
+							</div>
+
+							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+								<div class="px-4 py-6 sm:p-8">
+									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+										<fieldset class="sm:col-span-4">
+											<legend class="text-sm font-semibold leading-6 text-gray-400">Toggle API endpoints <span class="text-red-400">*</span></legend>
+											<p class="mt-1 text-sm leading-6 text-gray-500">
+												Some API endpoints are optional and primarily intended for
+												<a class="text-blue-400" href="https://passky.org/servers" target="_blank">statistics</a>.
+											</p>
+											<div class="mt-6 space-y-6">
+												<div class="relative flex gap-x-3">
+													<div class="flex h-6 items-center">
+														<input
+															checked
+															id="endpoint-getreport"
+															name="endpoint-getreport"
+															type="checkbox"
+															class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+														/>
+													</div>
+													<div class="text-sm leading-6">
+														<label for="endpoint-getreport" class="font-medium text-gray-400">Get Report API Endpoint</label>
+														<p class="text-gray-500">
+															Enables or disables the getReport API endpoint, which returns daily statistics on the number of new registrations. This data helps
+															track user growth and registration trends over time.
+														</p>
+													</div>
+												</div>
+												<div class="relative flex gap-x-3">
+													<div class="flex h-6 items-center">
+														<input
+															checked
+															id="endpoint-getstats"
+															name="endpoint-getstats"
+															type="checkbox"
+															class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+														/>
+													</div>
+													<div class="text-sm leading-6">
+														<label for="endpoint-getstats" class="font-medium text-gray-400">Get Stats API Endpoint</label>
+														<p class="text-gray-500">
+															Enables or disables the getStats API endpoint, which provides information on server resource consumption, including CPU, memory,
+															and disk usage. This endpoint helps monitor server performance and resource utilization.
+														</p>
+													</div>
+												</div>
+												<div class="relative flex gap-x-3">
+													<div class="flex h-6 items-center">
+														<input
+															checked
+															id="endpoint-getinfo"
+															name="endpoint-getinfo"
+															type="checkbox"
+															class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+														/>
+													</div>
+													<div class="text-sm leading-6">
+														<label for="endpoint-getinfo" class="font-medium text-gray-400">Get Info API Endpoint</label>
+														<p class="text-gray-500">
+															Enables or disables the getInfo API endpoint, which returns detailed project information, including the project version, total
+															number of accounts, storage capacity for accounts and passwords, server location, and hashing cost. This endpoint provides
+															comprehensive insights into the server's configuration and project status.
+														</p>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+										<fieldset class="sm:col-span-4">
+											<legend class="text-sm font-semibold leading-6 text-gray-400">Toggle Features <span class="text-red-400">*</span></legend>
+											<p class="mt-1 text-sm leading-6 text-gray-500">Toggle features related to API endpoints.</p>
+											<div class="mt-6 space-y-2">
+												<div class="relative flex gap-x-3">
+													<div class="flex h-6 items-center">
+														<input
+															checked
+															id="limiter-enabled"
+															name="limiter-enabled"
+															type="checkbox"
+															class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+														/>
+													</div>
+													<div class="text-sm leading-6">
+														<label for="limiter-enabled" class="font-medium text-gray-400">API Rate Limiter</label>
+														<p class="text-gray-500">
+															Enables or disables the API Rate Limiter, which helps mitigate brute force attacks by limiting the number of requests a user can
+															make in a specified time period. It is recommended to enable this feature to enhance the security and stability of your server.
+														</p>
+													</div>
+												</div>
+											</div>
+										</fieldset>
+										<div id="limiter-settings" class="sm:col-span-4 w-full p-4 bg-gray-700 rounded-md">
+											<div class="sm:col-span-4">
+												<label class="block text-sm font-medium leading-6 text-gray-400">API Rate Limiter Settings <span class="text-red-400">*</span></label>
+												<p class="text-gray-500">
+													Configure the rate limiter for various API endpoints. Enter the rate limit <b>values in seconds</b>. A value of -1 means that no rate
+													limiting will be applied to the respective API endpoint. It is recommended to enable the rate limiter to enhance security and mitigate
+													brute force attacks.
+												</p>
+												<div class="mt-2">
+													<label for="limiter-getInfo" class="text-sm font-medium text-gray-500">getInfo</label>
+													<input
+														id="limiter-getInfo"
+														name="limiter-getInfo"
+														type="number"
+														value="-1"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-getStats" class="text-sm font-medium text-gray-500">getStats</label>
+													<input
+														id="limiter-getStats"
+														name="limiter-getStats"
+														type="number"
+														value="-1"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-getReport" class="text-sm font-medium text-gray-500">getReport</label>
+													<input
+														id="limiter-getReport"
+														name="limiter-getReport"
+														type="number"
+														value="-1"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-getToken" class="text-sm font-medium text-gray-500">getToken</label>
+													<input
+														id="limiter-getToken"
+														name="limiter-getToken"
+														type="number"
+														value="3"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-getPasswords" class="text-sm font-medium text-gray-500">getPasswords</label>
+													<input
+														id="limiter-getPasswords"
+														name="limiter-getPasswords"
+														type="number"
+														value="2"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-savePassword" class="text-sm font-medium text-gray-500">savePassword</label>
+													<input
+														id="limiter-savePassword"
+														name="limiter-savePassword"
+														type="number"
+														value="2"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-editPassword" class="text-sm font-medium text-gray-500">editPassword</label>
+													<input
+														id="limiter-editPassword"
+														name="limiter-editPassword"
+														type="number"
+														value="2"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-deletePassword" class="text-sm font-medium text-gray-500">deletePassword</label>
+													<input
+														id="limiter-deletePassword"
+														name="limiter-deletePassword"
+														type="number"
+														value="2"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-deletePasswords" class="text-sm font-medium text-gray-500">deletePasswords</label>
+													<input
+														id="limiter-deletePasswords"
+														name="limiter-deletePasswords"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-createAccount" class="text-sm font-medium text-gray-500">createAccount</label>
+													<input
+														id="limiter-createAccount"
+														name="limiter-createAccount"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-deleteAccount" class="text-sm font-medium text-gray-500">deleteAccount</label>
+													<input
+														id="limiter-deleteAccount"
+														name="limiter-deleteAccount"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-importPasswords" class="text-sm font-medium text-gray-500">importPasswords</label>
+													<input
+														id="limiter-importPasswords"
+														name="limiter-importPasswords"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-enable2fa" class="text-sm font-medium text-gray-500">enable2fa</label>
+													<input
+														id="limiter-enable2fa"
+														name="limiter-enable2fa"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-disable2fa" class="text-sm font-medium text-gray-500">disable2fa</label>
+													<input
+														id="limiter-disable2fa"
+														name="limiter-disable2fa"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-addYubiKey" class="text-sm font-medium text-gray-500">addYubiKey</label>
+													<input
+														id="limiter-addYubiKey"
+														name="limiter-addYubiKey"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-removeYubiKey" class="text-sm font-medium text-gray-500">removeYubiKey</label>
+													<input
+														id="limiter-removeYubiKey"
+														name="limiter-removeYubiKey"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-upgradeAccount" class="text-sm font-medium text-gray-500">upgradeAccount</label>
+													<input
+														id="limiter-upgradeAccount"
+														name="limiter-upgradeAccount"
+														type="number"
+														value="10"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+													<label for="limiter-forgotUsername" class="text-sm font-medium text-gray-500">forgotUsername</label>
+													<input
+														id="limiter-forgotUsername"
+														name="limiter-forgotUsername"
+														type="number"
+														value="60"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													/>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="bg-gray-800">
+			<div class="max-w-7xl mx-auto py-12 px-4 overflow-hidden sm:px-6 lg:px-8">
+				<nav class="-mx-5 -my-2 flex flex-wrap justify-center" aria-label="Footer">
+					<div class="px-5 py-2">
+						<a href="ToS.pdf" target="_blank" class="text-base text-gray-300 hover:text-gray-500"> Terms of Service </a>
+					</div>
+					<div class="px-5 py-2">
+						<a href="PrivacyPolicy.pdf" target="_blank" class="text-base text-gray-300 hover:text-gray-500"> Privacy Policy </a>
+					</div>
+					<div class="px-5 py-2">
+						<a href="GDPR.pdf" target="_blank" class="text-base text-gray-300 hover:text-gray-500"> GDPR </a>
+					</div>
+					<div class="px-5 py-2">
+						<a href="CookiePolicy.pdf" target="_blank" class="text-base text-gray-300 hover:text-gray-500"> Cookie Policy </a>
+					</div>
+					<div class="px-5 py-2">
+						<a href="DataProcessingAddendum.pdf" target="_blank" class="text-base text-gray-300 hover:text-gray-500"> Data Processing Addendum </a>
+					</div>
+				</nav>
+				<div class="mt-8 flex justify-center space-x-6">
+					<a href="https://discord.rabbit-company.com" target="_blank" class="text-gray-400 hover:text-gray-500">
+						<span class="sr-only">Discord</span>
+						<svg
+							class="h-6 w-6"
+							stroke="currentColor"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							fill="none"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							aria-hidden="true"
+						>
+							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
+							<circle cx="9" cy="12" r="1" />
+							<circle cx="15" cy="12" r="1" />
+							<path d="M7.5 7.5c3.5 -1 5.5 -1 9 0" />
+							<path d="M7 16.5c3.5 1 6.5 1 10 0" />
+							<path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5" />
+							<path
+								d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5"
+							/>
+						</svg>
+					</a>
+					<a href="https://github.com/Rabbit-Company" target="_blank" class="text-gray-400 hover:text-gray-500">
+						<span class="sr-only">GitHub</span>
+						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								fill-rule="evenodd"
+								d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+					</a>
+					<a href="https://twitter.com/RabbitCompany66" target="_blank" class="text-gray-400 hover:text-gray-500">
+						<span class="sr-only">Twitter</span>
+						<svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+							<path
+								d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+							/>
+						</svg>
+					</a>
+				</div>
+				<p class="mt-8 text-center text-base text-gray-400">
+					&copy; 2024 <a class="text-blue-400" target="_blank" href="https://rabbit-company.com">Rabbit Company LLC</a>, All rights reserved.
+				</p>
+			</div>
+		</footer>
+		<script src="js/default.js"></script>
+		<script src="js/configurator.js"></script>
+		<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "e00e10fc7e884244a2e287b72d487c29"}'></script>
+	</body>
+</html>

@@ -1,22 +1,22 @@
 {
-  "name": "passky-main-website",
-  "version": "4.1.0",
-  "description": "Main website for Passky (password manager)",
-  "main": "index.js",
-  "scripts": {
-    "build": "npx tailwindcss -i ./tailwind.css -o ./website/css/tailwind.min.css --minify"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Rabbit-Company/Passky-Main-Website.git"
-  },
-  "author": "Rabbit Company LLC",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/Rabbit-Company/Passky-Main-Website/issues"
-  },
-  "homepage": "https://github.com/Rabbit-Company/Passky-Main-Website#readme",
-  "devDependencies": {
-    "tailwindcss": "^3.4.3"
-  }
+	"name": "passky-main-website",
+	"version": "4.2.0",
+	"description": "Main website for Passky (password manager)",
+	"main": "index.js",
+	"scripts": {
+		"build": "npx tailwindcss -i ./tailwind.css -o ./website/css/tailwind.min.css --minify"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Rabbit-Company/Passky-Main-Website.git"
+	},
+	"author": "Rabbit Company LLC",
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/Rabbit-Company/Passky-Main-Website/issues"
+	},
+	"homepage": "https://github.com/Rabbit-Company/Passky-Main-Website#readme",
+	"devDependencies": {
+		"tailwindcss": "^3.4.7"
+	}
 }
