@@ -45,6 +45,109 @@ document.getElementById("database-mysql").addEventListener("change", () => {
 	}
 });
 
+document.getElementById("admin-2fa-btn").addEventListener("click", () => {
+	const authBtn = document.getElementById("admin-2fa-btn");
+	const authSettings = document.getElementById("admin-2fa-settings");
+	const secretInput = document.getElementById("admin-2fa-secret");
+
+	if (authBtn.innerText === "Enable") {
+		authBtn.innerText = "Disable";
+		document.getElementById("qrcode").innerHTML = "";
+		authSettings.classList.remove("hidden");
+		authBtn.classList.remove("bg-green-700");
+		authBtn.classList.remove("hover:bg-green-800");
+		authBtn.classList.add("bg-red-700");
+		authBtn.classList.add("hover:bg-red-800");
+
+		const secret = generate2FASecret();
+		secretInput.value = secret;
+
+		const otpauthURL = `otpauth://totp/${getValue("admin-username")}?secret=${secret}&issuer=Passky`;
+		new QRCode(document.getElementById("qrcode"), otpauthURL);
+	} else {
+		authBtn.innerText = "Enable";
+		authBtn.classList.remove("bg-red-700");
+		authBtn.classList.remove("hover:bg-red-800");
+		authBtn.classList.add("bg-green-700");
+		authBtn.classList.add("hover:bg-green-800");
+		authSettings.classList.add("hidden");
+		secretInput.value = "";
+	}
+});
+
+function generate2FASecret() {
+	const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567";
+	let result = "";
+	const charactersLength = characters.length;
+
+	for (let i = 0; i < 16; i++) {
+		const randomIndex = Math.floor((window.crypto.getRandomValues(new Uint32Array(1))[0] / (0xffffffff + 1)) * charactersLength);
+		result += characters.charAt(randomIndex);
+	}
+
+	return result;
+}
+
+document.getElementById("admin-yubico-add-btn").addEventListener("click", () => {
+	const yubikey = document.getElementById("admin-yubico-key");
+	const yubikeys = document.getElementById("admin-yubico-keys");
+
+	if (yubikey.value.length !== 44) {
+		yubikey.value = "";
+		return;
+	}
+
+	const id = yubikey.value.substring(0, 12);
+
+	if (yubikeys.value.includes(id)) {
+		yubikey.value = "";
+		return;
+	}
+
+	if (yubikeys.value === "") {
+		yubikeys.value = id;
+	} else {
+		yubikeys.value += ";" + id;
+	}
+
+	yubikey.value = "";
+	displayYubiKeys();
+});
+
+document.getElementById("admin-yubico-remove-btn").addEventListener("click", () => {
+	const yubikey = document.getElementById("admin-yubico-key");
+	const yubikeys = document.getElementById("admin-yubico-keys");
+
+	if (yubikey.value.length !== 44) {
+		yubikey.value = "";
+		return;
+	}
+
+	const id = yubikey.value.substring(0, 12);
+
+	if (!yubikeys.value.includes(id)) {
+		yubikey.value = "";
+		return;
+	}
+
+	yubikeys.value = yubikeys.value.replace(";" + id, "").replace(id, "");
+	if (yubikeys.value.charAt(0) === ";") yubikeys.value = yubikeys.value.slice(1);
+
+	yubikey.value = "";
+	displayYubiKeys();
+});
+
+function displayYubiKeys() {
+	const yubikeys = document.getElementById("admin-yubico-keys").value.split(";");
+	let html = "";
+	yubikeys.forEach((yubikey) => {
+		if (yubikey.length !== 12) return;
+		html += `<li class="text-gray-400 py-4 flex"><img class='h-10 w-10 rounded-full' src='images/yubikey.png' alt='Yubico Key'><div class='ml-3'><p class='text-gray-400 text-sm font-medium'>${yubikey}</p></div></li>`;
+	});
+
+	document.getElementById("admin-yubico-keys-list").innerHTML = html;
+}
+
 function getValue(id) {
 	return document.getElementById(id).value;
 }
@@ -66,6 +169,8 @@ SERVER_CORES=${getValue("server-cores")}
 SERVER_LOCATION=${getValue("server-country")}
 ADMIN_USERNAME="${getValue("admin-username")}"
 ADMIN_PASSWORD="${getValue("admin-password")}"
+ADMIN_2FA_SECRET="${getValue("admin-2fa-secret")}"
+ADMIN_YUBI_KEYS="${getValue("admin-yubico-keys")}"
 CF_TURNSTILE_SITE_KEY=${getValue("admin-captcha-sitekey")}
 CF_TURNSTILE_SECRET_KEY=${getValue("admin-captcha-secretkey")}
 YUBI_CLOUD=${getValue("yubi-cloud")}
@@ -114,6 +219,9 @@ LIMITER_ADD_YUBIKEY=${getValue("limiter-addYubiKey")}
 LIMITER_REMOVE_YUBIKEY=${getValue("limiter-removeYubiKey")}
 LIMITER_UPGRADE_ACCOUNT=${getValue("limiter-upgradeAccount")}
 LIMITER_FORGOT_USERNAME=${getValue("limiter-forgotUsername")}
+GET_INFO_ENDPOINT_ENABLED=${getStatus("endpoint-getinfo")}
+GET_STATS_ENDPOINT_ENABLED=${getStatus("endpoint-getstats")}
+GET_REPORT_ENDPOINT_ENABLED=${getStatus("endpoint-getreport")}
 `;
 }
 
