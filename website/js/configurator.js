@@ -1,3 +1,5 @@
+import Blake2b from "./blake2b.js";
+
 document.getElementById("limiter-enabled").addEventListener("change", () => {
 	const checked = document.getElementById("limiter-enabled").checked;
 	const limiterSettings = document.getElementById("limiter-settings");
@@ -159,16 +161,20 @@ function getStatus(id) {
 function generateEnv() {
 	let databaseEngine = getStatus("database-mysql") ? "mysql" : "sqlite";
 
+	const hashedPassword = Blake2b.hash(`passkyAdminPanel2020-${getValue("admin-password")}-${getValue("admin-username")}`);
+
 	return `#
 #	Passky Server Configuration
 # https://passky.org/configurator
 #	${new Date().toISOString()}
 #
 
+VERSION=2
 SERVER_CORES=${getValue("server-cores")}
 SERVER_LOCATION=${getValue("server-country")}
 ADMIN_USERNAME="${getValue("admin-username")}"
-ADMIN_PASSWORD="${getValue("admin-password")}"
+ADMIN_PASSWORD_HASHING=1
+ADMIN_PASSWORD="${hashedPassword}"
 ADMIN_2FA_SECRET="${getValue("admin-2fa-secret")}"
 ADMIN_YUBI_KEYS="${getValue("admin-yubico-keys")}"
 CF_TURNSTILE_SITE_KEY=${getValue("admin-captcha-sitekey")}
