@@ -2,5 +2,5 @@
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://cdn.sellix.io; style-src 'self' 'unsafe-inline' https://cdn.sellix.io; object-src 'none'; form-action 'self'; base-uri 'self'; connect-src 'self' https://cloudflareinsights.com https://*.passky.org *; font-src 'self'; frame-src 'self' https://videos.rabbit-company.com https://www.youtube-nocookie.com https://embed.sellix.io; img-src 'self' data: https://i.ytimg.com https://cdn.sellix.io; manifest-src 'self'; media-src 'self' https://cdn.passky.org; worker-src 'none'; frame-ancestors 'none';
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://platform.billgang.com; style-src 'self' 'unsafe-inline' https://platform.billgang.com; object-src 'none'; form-action 'self'; base-uri 'self'; connect-src 'self' https://cloudflareinsights.com https://*.passky.org *; font-src 'self'; frame-src 'self' https://videos.rabbit-company.com https://www.youtube-nocookie.com https://platform.billgang.com; img-src 'self' data: https://i.ytimg.com https://platform.billgang.com; manifest-src 'self'; media-src 'self' https://cdn.passky.org; worker-src 'none'; frame-ancestors 'none';
   Permissions-Policy: interest-cohort=()

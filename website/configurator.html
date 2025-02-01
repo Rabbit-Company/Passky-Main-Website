@@ -122,7 +122,7 @@
 								<p class="mt-1 text-sm leading-6 text-gray-500">Settings for the server where Passky Server is deployed.</p>
 							</div>
 
-							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+							<div class="bg-gray-800 shadow-xs ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 								<div class="px-4 py-6 sm:p-8">
 									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 										<div class="sm:col-span-4">
@@ -135,7 +135,7 @@
 													name="server-cores"
 													type="number"
 													value="1"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 text-sm leading-6 text-gray-500">
 													Specifies the number of virtual CPUs allocated to the server. This setting helps calculate CPU usage. If you are unsure of the
@@ -150,7 +150,7 @@
 												<select
 													id="server-country"
 													name="country"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												>
 													<option value="AF">Afghanistan</option>
 													<option value="AX">Åland Islands</option>
@@ -419,7 +419,7 @@
 								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to Admin Panel.</p>
 							</div>
 
-							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+							<div class="bg-gray-800 shadow-xs ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 								<div class="px-4 py-6 sm:p-8">
 									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 										<div class="sm:col-span-4">
@@ -430,7 +430,7 @@
 													name="admin-username"
 													type="text"
 													value="admin"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 text-sm leading-6 text-gray-500">
 													Enter the username for accessing the Admin Panel. This username is required to log in and manage administrative settings and
@@ -446,7 +446,7 @@
 													id="admin-password"
 													name="admin-password"
 													type="password"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 text-sm leading-6 text-gray-500">
 													Enter a secure password for accessing the Admin Panel. This password protects administrative functions and settings, so choose a
@@ -486,7 +486,7 @@
 													name="admin-yubico-key"
 													type="text"
 													value=""
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<button
 													id="admin-yubico-add-btn"
@@ -524,7 +524,7 @@
 													name="admin-captcha-sitekey"
 													type="text"
 													value="1x00000000000000000000AA"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-500 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-500 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 mb-2 text-sm leading-6 text-gray-500">
 													Enter the Site Key provided by
@@ -538,7 +538,7 @@
 													name="admin-captcha-secretkey"
 													type="password"
 													value="1x0000000000000000000000000000000AA"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-500 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-500 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 text-sm leading-6 text-gray-500">
 													Enter the Secret Key provided by
@@ -563,7 +563,7 @@
 													name="yubi-cloud"
 													type="text"
 													value="https://api.yubico.com/wsapi/2.0/verify"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-500 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-500 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 mb-2 text-sm leading-6 text-gray-500">If you want to self-host YubiCloud you can change this URL to your own.</p>
 												<label for="yubi-id" class="mt-4 text-sm font-medium text-gray-500">Yubi ID</label>
@@ -572,7 +572,7 @@
 													name="yubi-id"
 													type="number"
 													value="67857"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-500 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-500 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 text-sm leading-6 text-gray-500">
 													You can use our ID, or create your own
@@ -591,7 +591,7 @@
 								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to accounts.</p>
 							</div>
 
-							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+							<div class="bg-gray-800 shadow-xs ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 								<div class="px-4 py-6 sm:p-8">
 									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 										<div class="sm:col-span-4">
@@ -604,7 +604,7 @@
 													name="account-max"
 													type="number"
 													value="100"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 text-sm leading-6 text-gray-500">
 													Specify the maximum number of accounts that can be created on this Passky server. Enter a numerical value to set a limit, or use -1
@@ -623,7 +623,7 @@
 													name="account-password-limit"
 													type="number"
 													value="1000"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 text-sm leading-6 text-gray-500">
 													Specify the maximum number of passwords that each account can store. Enter a numerical value to set a limit, or use -1 for unlimited
@@ -643,7 +643,7 @@
 													name="account-premium"
 													type="number"
 													value="-1"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												/>
 												<p class="mt-1 text-sm leading-6 text-gray-500">
 													Specify the maximum number of passwords that each premium account can store. Enter a numerical value to set a limit, or use -1 for
@@ -663,7 +663,7 @@
 								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to a database.</p>
 							</div>
 
-							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+							<div class="bg-gray-800 shadow-xs ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 								<div class="px-4 py-6 sm:p-8">
 									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 										<fieldset class="sm:col-span-4">
@@ -697,7 +697,7 @@
 												<select
 													id="database-cache-type"
 													name="database-cache-type"
-													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+													class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 												>
 													<option value="0">No Cache</option>
 													<option value="1">Estimated Row Count</option>
@@ -732,7 +732,7 @@
 														name="sqlite-name"
 														type="text"
 														value="passky"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<p class="mt-1 text-sm leading-6 text-gray-500">
 														Enter the name of the SQLite file (without the extension) that will be used to store your data.
@@ -751,7 +751,7 @@
 														id="mysql-host"
 														name="mysql-host"
 														type="text"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="mysql-port" class="text-sm font-medium text-gray-500">Port</label>
 													<input
@@ -759,7 +759,7 @@
 														name="mysql-port"
 														type="number"
 														value="3306"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="mysql-database" class="text-sm font-medium text-gray-500">Database</label>
 													<input
@@ -767,7 +767,7 @@
 														name="mysql-database"
 														type="text"
 														value="passky"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="mysql-user" class="text-sm font-medium text-gray-500">User</label>
 													<input
@@ -775,14 +775,14 @@
 														name="mysql-user"
 														type="text"
 														value="passky"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="mysql-password" class="text-sm font-medium text-gray-500">Password</label>
 													<input
 														id="mysql-password"
 														name="mysql-password"
 														type="password"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<div class="mt-2 flex items-center gap-x-3">
 														<input
@@ -790,7 +790,7 @@
 															id="mysql-ssl"
 															name="mysql-ssl"
 															type="checkbox"
-															class="mt-2 mb-2 block rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+															class="mt-2 mb-2 block rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 														/>
 														<label for="mysql-ssl" class="mt-2 mb-2 block text-sm font-medium leading-6 text-gray-400">Use SSL</label>
 													</div>
@@ -800,7 +800,7 @@
 														name="mysql-ca-certificate"
 														type="text"
 														value="/etc/ssl/certs/ca-certificates.crt"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 												</div>
 											</div>
@@ -816,7 +816,7 @@
 								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to cache.</p>
 							</div>
 
-							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+							<div class="bg-gray-800 shadow-xs ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 								<div class="px-4 py-6 sm:p-8">
 									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 										<fieldset class="sm:col-span-4">
@@ -850,7 +850,7 @@
 														name="redis-internal-host"
 														type="text"
 														value="127.0.0.1"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="redis-internal-port" class="mt-1 text-sm font-medium text-gray-500">Port</label>
 													<input
@@ -858,14 +858,14 @@
 														name="redis-internal-port"
 														type="number"
 														value="6379"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="redis-internal-password" class="mt-1 text-sm font-medium text-gray-500">Password</label>
 													<input
 														id="redis-internal-password"
 														name="redis-internal-password"
 														type="password"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<p class="mt-1 text-sm leading-6 text-gray-500">
 														Configure internal Redis cache for your Passky server. This option is suitable for most deployments, providing efficient caching
@@ -884,7 +884,7 @@
 														name="redis-external-host"
 														type="text"
 														value="127.0.0.1"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="redis-external-port" class="mt-1 text-sm font-medium text-gray-500">Port</label>
 													<input
@@ -892,14 +892,14 @@
 														name="redis-external-port"
 														type="number"
 														value="6379"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="redis-external-password" class="mt-1 text-sm font-medium text-gray-500">Password</label>
 													<input
 														id="redis-external-password"
 														name="redis-external-password"
 														type="password"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<p class="mt-1 text-sm leading-6 text-gray-500">
 														Configure the external Redis cache for high availability deployments with multiple Passky servers. This option is recommended for
@@ -920,7 +920,7 @@
 								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to email.</p>
 							</div>
 
-							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+							<div class="bg-gray-800 shadow-xs ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 								<div class="px-4 py-6 sm:p-8">
 									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 										<fieldset class="sm:col-span-4">
@@ -954,7 +954,7 @@
 														id="smtp-host"
 														name="smtp-host"
 														type="text"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="smtp-port" class="mt-1 text-sm font-medium text-gray-500">Port</label>
 													<input
@@ -962,21 +962,21 @@
 														name="smtp-port"
 														type="number"
 														value="465"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="smtp-username" class="mt-1 text-sm font-medium text-gray-500">Username</label>
 													<input
 														id="smtp-username"
 														name="smtp-username"
 														type="text"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="smtp-password" class="mt-1 text-sm font-medium text-gray-500">Password</label>
 													<input
 														id="smtp-password"
 														name="smtp-password"
 														type="password"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<div class="flex items-center gap-x-3">
 														<input
@@ -984,7 +984,7 @@
 															id="smtp-tls"
 															name="smtp-tls"
 															type="checkbox"
-															class="mt-2 block rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+															class="mt-2 block rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 														/>
 														<label for="smtp-tls" class="mt-2 block text-sm font-medium leading-6 text-gray-400">Use TLS</label>
 													</div>
@@ -1007,7 +1007,7 @@
 								<p class="mt-1 text-sm leading-6 text-gray-500">Settings related to API endpoints.</p>
 							</div>
 
-							<div class="bg-gray-800 shadow-sm ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
+							<div class="bg-gray-800 shadow-xs ring-1 ring-gray-900/5 sm:rounded-xl md:col-span-2">
 								<div class="px-4 py-6 sm:p-8">
 									<div class="grid max-w-2xl grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 										<fieldset class="sm:col-span-4">
@@ -1024,7 +1024,7 @@
 															id="endpoint-getreport"
 															name="endpoint-getreport"
 															type="checkbox"
-															class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+															class="h-4 w-4 rounded-sm border-gray-300 text-indigo-600 focus:ring-indigo-600"
 														/>
 													</div>
 													<div class="text-sm leading-6">
@@ -1042,7 +1042,7 @@
 															id="endpoint-getstats"
 															name="endpoint-getstats"
 															type="checkbox"
-															class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+															class="h-4 w-4 rounded-sm border-gray-300 text-indigo-600 focus:ring-indigo-600"
 														/>
 													</div>
 													<div class="text-sm leading-6">
@@ -1060,7 +1060,7 @@
 															id="endpoint-getinfo"
 															name="endpoint-getinfo"
 															type="checkbox"
-															class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+															class="h-4 w-4 rounded-sm border-gray-300 text-indigo-600 focus:ring-indigo-600"
 														/>
 													</div>
 													<div class="text-sm leading-6">
@@ -1085,7 +1085,7 @@
 															id="limiter-enabled"
 															name="limiter-enabled"
 															type="checkbox"
-															class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+															class="h-4 w-4 rounded-sm border-gray-300 text-indigo-600 focus:ring-indigo-600"
 														/>
 													</div>
 													<div class="text-sm leading-6">
@@ -1113,7 +1113,7 @@
 														name="limiter-getInfo"
 														type="number"
 														value="-1"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-getStats" class="text-sm font-medium text-gray-500">getStats</label>
 													<input
@@ -1121,7 +1121,7 @@
 														name="limiter-getStats"
 														type="number"
 														value="-1"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-getReport" class="text-sm font-medium text-gray-500">getReport</label>
 													<input
@@ -1129,7 +1129,7 @@
 														name="limiter-getReport"
 														type="number"
 														value="-1"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-getToken" class="text-sm font-medium text-gray-500">getToken</label>
 													<input
@@ -1137,7 +1137,7 @@
 														name="limiter-getToken"
 														type="number"
 														value="3"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-getPasswords" class="text-sm font-medium text-gray-500">getPasswords</label>
 													<input
@@ -1145,7 +1145,7 @@
 														name="limiter-getPasswords"
 														type="number"
 														value="2"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-savePassword" class="text-sm font-medium text-gray-500">savePassword</label>
 													<input
@@ -1153,7 +1153,7 @@
 														name="limiter-savePassword"
 														type="number"
 														value="2"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-editPassword" class="text-sm font-medium text-gray-500">editPassword</label>
 													<input
@@ -1161,7 +1161,7 @@
 														name="limiter-editPassword"
 														type="number"
 														value="2"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-deletePassword" class="text-sm font-medium text-gray-500">deletePassword</label>
 													<input
@@ -1169,7 +1169,7 @@
 														name="limiter-deletePassword"
 														type="number"
 														value="2"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-deletePasswords" class="text-sm font-medium text-gray-500">deletePasswords</label>
 													<input
@@ -1177,7 +1177,7 @@
 														name="limiter-deletePasswords"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-createAccount" class="text-sm font-medium text-gray-500">createAccount</label>
 													<input
@@ -1185,7 +1185,7 @@
 														name="limiter-createAccount"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-deleteAccount" class="text-sm font-medium text-gray-500">deleteAccount</label>
 													<input
@@ -1193,7 +1193,7 @@
 														name="limiter-deleteAccount"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-importPasswords" class="text-sm font-medium text-gray-500">importPasswords</label>
 													<input
@@ -1201,7 +1201,7 @@
 														name="limiter-importPasswords"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-enable2fa" class="text-sm font-medium text-gray-500">enable2fa</label>
 													<input
@@ -1209,7 +1209,7 @@
 														name="limiter-enable2fa"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-disable2fa" class="text-sm font-medium text-gray-500">disable2fa</label>
 													<input
@@ -1217,7 +1217,7 @@
 														name="limiter-disable2fa"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-addYubiKey" class="text-sm font-medium text-gray-500">addYubiKey</label>
 													<input
@@ -1225,7 +1225,7 @@
 														name="limiter-addYubiKey"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-removeYubiKey" class="text-sm font-medium text-gray-500">removeYubiKey</label>
 													<input
@@ -1233,7 +1233,7 @@
 														name="limiter-removeYubiKey"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-upgradeAccount" class="text-sm font-medium text-gray-500">upgradeAccount</label>
 													<input
@@ -1241,7 +1241,7 @@
 														name="limiter-upgradeAccount"
 														type="number"
 														value="10"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 													<label for="limiter-forgotUsername" class="text-sm font-medium text-gray-500">forgotUsername</label>
 													<input
@@ -1249,7 +1249,7 @@
 														name="limiter-forgotUsername"
 														type="number"
 														value="60"
-														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-sm placeholder:text-gray-400 focus:outline-none sm:text-sm sm:leading-6"
+														class="block w-full rounded-md border border-gray-700 px-3 py-2 bg-gray-800 text-gray-400 shadow-xs placeholder:text-gray-400 focus:outline-hidden sm:text-sm sm:leading-6"
 													/>
 												</div>
 											</div>
